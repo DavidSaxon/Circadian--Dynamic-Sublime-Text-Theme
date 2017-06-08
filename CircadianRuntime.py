@@ -351,12 +351,14 @@ UI_THEME_DATA = \
         "class": "tab_close_button",
         "content_margin": [0, 0],
         // Tab close default settings
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tab-close.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tab-close.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 0],
+        "layer0.tint": {tab_close},
         // Tab close hover settings
-        "layer1.texture": "Theme - Flatland/Flatland Dark/tab-close-hover.png",
-        "layer1.opacity": 0.0
+        "layer1.texture": "Theme - Circadian/Circadian/tab-close.png",
+        "layer1.opacity": 0.0,
+        "layer1.tint": {tab_close_hover}
     }},
     {{
         // Tab button size
@@ -375,8 +377,9 @@ UI_THEME_DATA = \
     {{
         "class": "tab_close_button",
         "parents": [{{"class": "tab_control", "attributes": ["dirty"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tab-dirty.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tab-dirty.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {tab_dirty},
         "layer1.opacity": 0.0
     }},
     {{
@@ -412,24 +415,6 @@ UI_THEME_DATA = \
         "layer0.opacity": 1.0,
         "layer1.opacity": 0.0
     }},
-    // SQUARE TABS
-    {{
-        "class": "tabset_control",
-        "settings": ["flatland_square_tabs"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/square/tabset-background.png",
-        "content_margin": [0, 0, 0, 0]
-        // "tab_overlap": 5
-    }},
-    {{
-        "class": "tab_control",
-        "settings": ["flatland_square_tabs"],
-        // Inactive tab settings
-        "layer0.texture": "Theme - Flatland/Flatland Dark/square/tab-inactive.png",
-        // Active tab setting
-        "layer1.texture": "Theme - Flatland/Flatland Dark/square/tab-active.png",
-        // Hover tab setting
-        "layer2.texture": "Theme - Flatland/Flatland Dark/square/tab-hover.png"
-    }},
 
 //
 // FOLD BUTTONS
@@ -437,12 +422,14 @@ UI_THEME_DATA = \
 
     {{
         "class": "fold_button_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/fold-closed.png",
+        "layer0.texture": "Theme - Circadian/Circadian/fold-closed.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/fold-closed-pressed.png",
+        "layer0.tint": {fold_closed},
+        "layer1.texture": "Theme - Circadian/Circadian/fold-closed.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
+        "layer1.tint": {fold_closed_pressed},
         "content_margin": [9, 7, 8, 6]
     }},
     {{
@@ -460,8 +447,10 @@ UI_THEME_DATA = \
     {{
         "class": "fold_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/fold-open.png",
-        "layer1.texture": "Theme - Flatland/Flatland Dark/fold-open-pressed.png"
+        "layer0.texture": "Theme - Circadian/Circadian/fold-open.png",
+        "layer0.tint": {fold_open},
+        "layer1.texture": "Theme - Circadian/Circadian/fold-open.png",
+        "layer1.tint": {fold_open_pressed}
     }},
 
 //
@@ -471,33 +460,37 @@ UI_THEME_DATA = \
     // Standard vertical scroll bar
     {{
         "class": "scroll_bar_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 6],
+        "layer0.tint": {scroll_bar_background},
         "blur": false
     }},
     // Standard horizontal scroll bar
     {{
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 0],
+        "layer0.tint": {scroll_bar_background},
         "blur": false
     }},
     // Standard scroll bar corner
     {{
         "class": "scroll_corner_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-corner.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.inner_margin": [1, 1],
+        "layer0.tint": {scroll_bar_corner}
     }},
     // Standard vertical scroll puck
     {{
         "class": "puck_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-puck-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-puck-vertical.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 10],
+        "layer0.tint": {scroll_puck},
         "content_margin": [8, 12],
         "blur": false
     }},
@@ -505,9 +498,10 @@ UI_THEME_DATA = \
     {{
         "class": "puck_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-puck-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-puck-horizontal.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [10, 0],
+        "layer0.tint": {scroll_puck},
         "content_margin": [12, 8],
         "blur": false
     }},
@@ -531,7 +525,7 @@ UI_THEME_DATA = \
     {{
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-scrollbar-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-scrollbar-vertical.png",
         "layer0.inner_margin": [0, 5],
         "blur": true
     }},
@@ -540,7 +534,7 @@ UI_THEME_DATA = \
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-scrollbar-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-scrollbar-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "blur": true
     }},
@@ -548,7 +542,7 @@ UI_THEME_DATA = \
     {{
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-puck-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-puck-vertical.png",
         "layer0.inner_margin": [0, 5],
         "content_margin": [5, 20],
         "blur": true
@@ -558,7 +552,7 @@ UI_THEME_DATA = \
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-puck-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-puck-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "content_margin": [20, 5],
         "blur": true
@@ -568,14 +562,14 @@ UI_THEME_DATA = \
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["dark"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-dark-puck-vertical.png"
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-dark-puck-vertical.png"
     }},
     // Overlay light horizontal puck (for dark content)
     {{
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal", "dark"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-dark-puck-horizontal.png"
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-dark-puck-horizontal.png"
     }},
 
 //
@@ -584,7 +578,7 @@ UI_THEME_DATA = \
 
     {{
         "class": "sheet_container_control",
-        "layer0.tint": [38,41,44],
+        "layer0.tint": {empty_window},
         "layer0.opacity": 1.0
     }},
 
@@ -594,7 +588,7 @@ UI_THEME_DATA = \
     {{
         "class": "grid_layout_control",
         "border_size": 1,
-        "border_color": [70, 70, 70]
+        "border_color": {layout_divider}
     }},
 
 //
@@ -603,7 +597,7 @@ UI_THEME_DATA = \
 
     {{
         "class": "minimap_control",
-        "viewport_color": [61, 142, 243, 20]
+        "viewport_color": {minimap}
     }},
 
 //
@@ -613,7 +607,7 @@ UI_THEME_DATA = \
     // General labels
     {{
         "class": "label_control",
-        "color": [201, 202, 203],
+        "color": {large_button_text},
         "shadow_color": [201, 202, 203],
         "shadow_offset": [0, 0],
         "font.bold" : true,
@@ -637,7 +631,7 @@ UI_THEME_DATA = \
     {{
         "class": "label_control",
         "parents": [{{"class": "status_bar"}}],
-        "color": [148, 149, 151],
+        "color": {status_bar_label},
         "shadow_color": [200, 200, 200],
         "shadow_offset": [0, 0],
         "font.bold" : false
@@ -650,7 +644,7 @@ UI_THEME_DATA = \
     // Tooltip container
     {{
         "class": "tool_tip_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tooltip.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tooltip.png",
         "layer0.inner_margin": [1, 1],
         "layer0.opacity": 0.95,
         "content_margin": [3, 3]
@@ -667,9 +661,10 @@ UI_THEME_DATA = \
     // Status bar container
     {{
         "class": "status_bar",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/status-bar-background.png",
+        "layer0.texture": "Theme - Circadian/Circadian/status-bar-background.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 2],
+        "layer0.tint": {status_bar},
         "content_margin": [14, 4, 4, 4]
     }},
     {{
@@ -684,7 +679,7 @@ UI_THEME_DATA = \
     // Sidebar container
     {{
         "class": "sidebar_container",
-        "layer0.tint": [49, 52 ,55],
+        "layer0.tint": {sidebar},
         "layer0.opacity": 1.0,
         "layer0.draw_center": false,
         "layer0.inner_margin": [0, 0, 0, 0],
@@ -729,17 +724,10 @@ UI_THEME_DATA = \
     // Sidebar rows
     {{
         "class": "tree_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/sidebar-row-selected.png",
+        "layer0.texture": "Theme - Circadian/Circadian/sidebar-row-selected.png",
         "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1,1]
-    }},
-    // Settings for gray selected sidebar
-    {{
-        "settings": ["flatland_gray_selected_sidebar"],
-        "class": "tree_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/sidebar-row-selected-gray.png",
-        "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1,1]
+        "layer0.inner_margin": [1,1],
+        "layer0.tint": {sidebar_selected}
     }},
     // Sidebar row selected
     {{
@@ -750,9 +738,9 @@ UI_THEME_DATA = \
     // Sidebar heading
     {{
         "class": "sidebar_heading",
-        "color": [148, 149, 151],
+        "color": {sidebar_heading},
         "font.bold": true,
-        "shadow_color": [148, 149, 151],
+        "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 0]
     }},
     // Sidebar entry
@@ -772,7 +760,7 @@ UI_THEME_DATA = \
     {{
         "class": "sidebar_label",
         "parents": [{{"class": "tree_row", "attributes": ["expandable", "hover"]}}],
-        "color": [255, 255, 255]
+        "color": {sb_file_text_hover}
     }},
     {{
         "class": "sidebar_label",
@@ -784,17 +772,17 @@ UI_THEME_DATA = \
     {{
         "class": "sidebar_label",
         "parents": [{{"class": "tree_row", "attributes": ["selected"]}}],
-        "color": [255, 255, 255],
+        "color": {sb_file_text_selected},
         "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 0]
     }},
     // Sidebar file close
     {{
         "class": "close_button",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close.png",
+        "layer0.texture": "Theme - Circadian/Circadian/file-close.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/file-close-selected.png",
+        "layer1.texture": "Theme - Circadian/Circadian/file-close-selected.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
         "content_margin": [8, 8]
@@ -815,62 +803,71 @@ UI_THEME_DATA = \
     {{
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-dirty.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Circadian/Circadian/file-dirty.png",
+        "layer0.opacity": 1.0,
+        "layer0.tint": {tab_dirty}
     }},
     {{
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{{"class": "tree_row", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-dirty-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-dirty-selected.png",
+        "layer0.tint": {sb_file_text_selected}
+
     }},
     {{
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{{"class": "tree_row", "attributes": ["hover"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-close.png"
     }},
     // Sidebar file close hover
     {{
         "class": "close_button",
         "attributes": ["hover"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close-hover.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-close-hover.png"
     }},
     // Sidebar group closed
     {{
         "class": "disclosure_button_control",
         "content_margin": [0, 6, 18, 7],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed.png",
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
         "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
+        "layer0.inner_margin": 0,
+        "layer0.tint": {sb_folder_icon}
     }},
     {{
         "class": "disclosure_button_control",
         "parents": [{{"class": "tree_row", "attributes": ["hover"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
+        "layer0.tint": {sb_folder_icon_hover}
     }},
     {{
         "class": "disclosure_button_control",
         "parents": [{{"class": "tree_row", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
+        "layer0.tint": {sb_folder_icon_selected}
     }},
     // Sidebar group open
     {{
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": {sb_folder_icon}
     }},
     {{
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{{"class": "tree_row", "attributes": ["hover"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": {sb_folder_icon_hover}
     }},
     {{
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{{"class": "tree_row", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": {sb_folder_icon_selected}
     }},
 
 //
@@ -890,25 +887,25 @@ UI_THEME_DATA = \
         {{
             "keyframes":
             [
-                "Theme - Flatland/Flatland Dark/spinner/spin_1.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_2.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_3.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_4.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_5.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_6.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_7.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_8.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_9.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_10.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_11.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_12.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_13.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_14.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_15.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_16.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_17.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_18.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_19.png"
+                "Theme - Circadian/Circadian/spinner/spin_1.png",
+                "Theme - Circadian/Circadian/spinner/spin_2.png",
+                "Theme - Circadian/Circadian/spinner/spin_3.png",
+                "Theme - Circadian/Circadian/spinner/spin_4.png",
+                "Theme - Circadian/Circadian/spinner/spin_5.png",
+                "Theme - Circadian/Circadian/spinner/spin_6.png",
+                "Theme - Circadian/Circadian/spinner/spin_7.png",
+                "Theme - Circadian/Circadian/spinner/spin_8.png",
+                "Theme - Circadian/Circadian/spinner/spin_9.png",
+                "Theme - Circadian/Circadian/spinner/spin_10.png",
+                "Theme - Circadian/Circadian/spinner/spin_11.png",
+                "Theme - Circadian/Circadian/spinner/spin_12.png",
+                "Theme - Circadian/Circadian/spinner/spin_13.png",
+                "Theme - Circadian/Circadian/spinner/spin_14.png",
+                "Theme - Circadian/Circadian/spinner/spin_15.png",
+                "Theme - Circadian/Circadian/spinner/spin_16.png",
+                "Theme - Circadian/Circadian/spinner/spin_17.png",
+                "Theme - Circadian/Circadian/spinner/spin_18.png",
+                "Theme - Circadian/Circadian/spinner/spin_19.png"
             ],
             "loop": true,
             "frame_time": 0.05
@@ -928,13 +925,15 @@ UI_THEME_DATA = \
         "content_margin": [4, 6, 4, 5],
         "min_size": [69, 0],
         // Default button state
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-large.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-large.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 6],
+        "layer0.tint": {large_button},
         // Pressed button setup
-        "layer1.texture": "Theme - Flatland/Flatland Dark/btn-large-on.png",
+        "layer1.texture": "Theme - Circadian/Circadian/btn-large.png",
         "layer1.opacity": 0.0,
-        "layer1.inner_margin": [6, 6]
+        "layer1.inner_margin": [6, 6],
+        "layer1.tint": {large_button_pressed}
     }},
     {{
         // Pressed button state
@@ -950,8 +949,8 @@ UI_THEME_DATA = \
     // Text input field item
     {{
         "class": "text_line_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/text-field.png",
-        "layer0.opacity": 1.0,
+        "layer0.texture": "Theme - Circadian/Circadian/text-field.png",
+        "layer0.opacity": 0.0,
         "layer0.inner_margin": [10,10,10,10],
         "content_margin": [4, 5, 15, 4]
     }},
@@ -963,17 +962,19 @@ UI_THEME_DATA = \
     // Bottom panel background
     {{
         "class": "panel_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/panel-background.png",
+        "layer0.texture": "Theme - Circadian/Circadian/panel-background.png",
         "layer0.inner_margin": [2, 2, 2, 5],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": {panel_background}
     }},
     // Quick panel background
     {{
         "class": "overlay_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-bg.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-bg.png",
         "layer0.inner_margin": [30, 30, 30, 30], // 9grid for the background
         "layer0.opacity": 1.0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/quick-panel-background.png",
+        "layer0.tint": {quick_panel_background},
+        "layer1.texture": "Theme - Circadian/Circadian/quick-panel-background.png",
         "layer1.inner_margin": [20, 40, 20, 20],
         "layer1.opacity": 1.0,
         "content_margin": [20, 0, 20, 26] // content margin
@@ -997,33 +998,35 @@ UI_THEME_DATA = \
     }},
     {{
         "class": "quick_panel_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row.png",
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": {qp_row}
     }},
     {{
         "class": "quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
+        "layer0.tint": {qp_row_selected}
     }},
     {{
         "class": "quick_panel_label",
-        "fg": [144, 146, 147],
-        "match_fg": [36, 150, 233, 255],
-        "selected_fg": [255, 255, 255, 255], //selected foreground
-        "selected_match_fg": [37, 40, 43, 255]
+        "fg": {qp_text},
+        "match_fg": {qp_text_match},
+        "selected_fg": {qp_text_selected},
+        "selected_match_fg": {qp_text_match_selected}
     }},
     {{
         "class": "quick_panel_path_label",
-        "fg": [104, 106, 107, 255],
-        "match_fg": [16, 130, 213, 255],
-        "selected_fg": [215, 215, 215, 255],
-        "selected_match_fg": [57, 60, 63, 255]
+        "fg": {qp_text},
+        "match_fg": {qp_text_match},
+        "selected_fg": {qp_text_selected},
+        "selected_match_fg": {qp_text_match_selected}
     }},
     {{
         "class": "quick_panel_score_label",
-        "fg": [43, 151, 237, 255],
-        "selected_fg": [43, 151, 237, 255]
+        "fg": {qp_text_score},
+        "selected_fg": {qp_text_score_selected}
     }},
 
 //
@@ -1032,14 +1035,16 @@ UI_THEME_DATA = \
 
     {{
         "class": "mini_quick_panel_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row.png",
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": {qp_row}
     }},
     {{
         "class": "mini_quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
+        "layer0.tint": {qp_row_selected}
     }},
 
 //
@@ -1052,24 +1057,25 @@ UI_THEME_DATA = \
     {{
         "class": "auto_complete",
         "row_padding": [2, 2],
-        "layer0.tint": [30, 30, 30],
+        "layer0.tint": {ac_background},
         "layer0.opacity": 1.0,
         "dark_content": true
     }},
     {{
         "class": "auto_complete_label",
-        "fg": [140, 140, 140],
-        "match_fg": [255, 255, 255],
+        "fg": {ac_text},
+        "match_fg": {ac_text_match},
         "bg": [26, 26, 26],
-        "selected_fg": [255, 255, 255],
-        "selected_match_fg": [255, 255, 255],
+        "selected_fg": {ac_text_selected},
+        "selected_match_fg": {ac_text_match_selected},
         "selected_bg": [86, 86, 86]
     }},
     {{
         "class": "table_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/code-completion-row-selected.png",
+        "layer0.texture": "Theme - Circadian/Circadian/code-completion-row-selected.png",
         "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.inner_margin": [1, 1],
+        "layer0.tint": {ac_row_selected}
     }},
     {{
         "class": "table_row",
@@ -1084,32 +1090,36 @@ UI_THEME_DATA = \
     // Button group middle
     {{
         "class": "icon_button_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-middle.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-middle.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {large_button},
         "content_margin": [4, 4,4,5]
     }},
     // Button group left
     {{
         "class": "icon_button_control",
         "attributes": ["left"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-left.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-left.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {large_button},
         "content_margin": [8,4,5,5]
     }},
     // Button group right
     {{
         "class": "icon_button_control",
         "attributes": ["right"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-right.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-right.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {large_button},
         "content_margin": [4,4,8,5]
     }},
     // Button single
     {{
         "class": "icon_button_control",
         "attributes": ["left", "right"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-single.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-single.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {large_button},
         "content_margin": [8,4,8,5]
     }},
 
@@ -1120,38 +1130,44 @@ UI_THEME_DATA = \
     // Regex search button
     {{
         "class": "icon_regex",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-regex-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-regex.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_regex",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-regex-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-regex.png",
+        "layer0.tint": {icon_button_on}
     }},
     // Case sensitive search button
     {{
         "class": "icon_case",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-case-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-case.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_case",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-case-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-case.png",
+        "layer0.tint": {icon_button_on}
     }},
     // Match whole word search button
     {{
         "class": "icon_whole_word",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-word-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-word.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_whole_word",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-word-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-word.png",
+        "layer0.tint": {icon_button_on}
     }},
 
 //
@@ -1161,26 +1177,30 @@ UI_THEME_DATA = \
     // Show search context button
     {{
         "class": "icon_context",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-context-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-context.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_context",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-context-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-context.png",
+        "layer0.tint": {icon_button_on}
     }},
     // Use search buffer
     {{
         "class": "icon_use_buffer",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-buffer-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-buffer.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_use_buffer",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-buffer-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-buffer.png",
+        "layer0.tint": {icon_button_on}
     }},
 
 //
@@ -1190,38 +1210,44 @@ UI_THEME_DATA = \
     // Reverse search direction button
     {{
         "class": "icon_reverse",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-reverse-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-reverse.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_reverse",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-reverse-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-reverse.png",
+        "layer0.tint": {icon_button_on}
     }},
     // Search wrap button
     {{
         "class": "icon_wrap",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-wrap-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-wrap.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_wrap",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-wrap-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-wrap.png",
+        "layer0.tint": {icon_button_on}
     }},
     // Search in selection button
     {{
         "class": "icon_in_selection",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-selection-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-selection.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_in_selection",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-selection-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-selection.png",
+        "layer0.tint": {icon_button_on}
     }},
 
 //
@@ -1231,14 +1257,16 @@ UI_THEME_DATA = \
     // Preserve case button
     {{
         "class": "icon_preserve_case",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-preserve-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-preserve.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_preserve_case",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-preserve-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-preserve.png",
+        "layer0.tint": {icon_button_on}
     }},
 
 //
@@ -1248,14 +1276,16 @@ UI_THEME_DATA = \
     // Highlight results button
     {{
         "class": "icon_highlight",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-highlight-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-highlight.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": {icon_button_off},
         "content_margin": [8, 8]
     }},
     {{
         "class": "icon_highlight",
         "parents": [{{"class": "icon_button_control", "attributes": ["selected"]}}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-highlight-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-highlight.png",
+        "layer0.tint": {icon_button_on}
     }}
 
 ]
@@ -1272,6 +1302,22 @@ class Colour(object):
         self.__g = g
         self.__b = b
         self.__a = a
+
+    @property
+    def r(self):
+        return self.__r
+
+    @property
+    def g(self):
+        return self.__g
+
+    @property
+    def b(self):
+        return self.__b
+
+    @property
+    def a(self):
+        return self.__a
 
     def to_hex(self):
         s = '#'
@@ -1298,41 +1344,423 @@ class Colour(object):
 #                                 DEFAULT COLOURS
 #-------------------------------------------------------------------------------
 
-background         = Colour(0.78, 0.95, 1.0)
-caret              = Colour(1.0, 0.3, 0.0)
-text               = Colour(0.0, 0.0, 0.0)
-line_highlight     = Colour(1.0, 1.0, 0.7)
-selection          = Colour(1.0, 1.0, 0.0)
-inactive_selection = Colour(1.0, 1.0, 0.0, 0.2)
-find_highlight     = Colour(1.0, 0.5, 0.0)
-line_numbers       = Colour(0.4, 0.4, 0.4)
-guide              = Colour(0.4, 0.4, 0.4)
-comment            = Colour(0.5, 0.5, 0.5)
-literal            = Colour(1.0, 0.05, 0.05)
-string_literal     = Colour(0.0, 0.35, 0.0)
-keyword            = Colour(0.5, 0.0, 0.5)
-entity_name        = Colour(0.3, 0.0, 1.0)
-modifier           = Colour(0.8, 0.5, 0.0)
-variable           = Colour(0.0, 0.3, 0.2)
-builtin_func       = Colour(0.5, 0.0, 0.5)
-invalid_background = Colour(1.0, 0.0, 0.0)
-invalid_text       = Colour(0.0, 0.0, 0.0)
-include_background = Colour(0.4, 0.4, 0.4, 0.4)
-include_text       = Colour(0.0, 0.1, 1.0)
+background              = Colour(0.78, 0.95, 1.0)
+caret                   = Colour(1.0, 0.5, 0.0)
+text                    = Colour(0.0, 0.0, 0.0)
+line_highlight          = Colour(1.0, 1.0, 0.7)
+selection               = Colour(1.0, 1.0, 0.0)
+inactive_selection      = Colour(1.0, 1.0, 0.0, 0.2)
+find_highlight          = Colour(1.0, 0.5, 0.0)
+line_numbers            = Colour(0.4, 0.4, 0.4)
+guide                   = Colour(0.4, 0.4, 0.4)
+comment                 = Colour(0.5, 0.5, 0.5)
+literal                 = Colour(1.0, 0.05, 0.05)
+string_literal          = Colour(0.0, 0.35, 0.0)
+keyword                 = Colour(0.5, 0.0, 0.5)
+entity_name             = Colour(0.3, 0.0, 1.0)
+modifier                = Colour(0.8, 0.5, 0.0)
+variable                = Colour(0.0, 0.3, 0.2)
+builtin_func            = Colour(0.5, 0.0, 0.5)
+invalid_background      = Colour(1.0, 0.0, 0.0)
+invalid_text            = Colour(0.0, 0.0, 0.0)
+include_background      = Colour(0.4, 0.4, 0.4, 0.4)
+include_text            = Colour(0.0, 0.1, 1.0)
 
 
-sidebar            = Colour(1.0, 1.0, 1.0)
-sb_file_text       = Colour(0.2, 0.2, 0.2)
-sb_folder_text     = Colour(0.0, 0.0, 0.0)
-tab_background     = Colour(1.0, 1.0, 1.0)
-tab_active         = Colour(0.85, 0.95, 1.0)
-tab_inactive       = Colour(1.0, 1.0, 1.0)
-tab_hover          = Colour(0.9, 0.95, 1.0)
-tab_active_text    = Colour(0.0, 0.0, 0.0)
-tab_inactive_text  = Colour(0.25, 0.25, 0.25)
-tab_hover_text     = Colour(0.0, 0.0, 0.0)
+sidebar                 = Colour(1.0, 1.0, 1.0)
+sb_file_text            = Colour(0.2, 0.2, 0.2)
+sb_folder_text          = Colour(0.0, 0.0, 0.0)
+tab_background          = Colour(1.0, 1.0, 1.0)
+tab_active              = Colour(0.85, 0.95, 1.0)
+tab_inactive            = Colour(1.0, 1.0, 1.0)
+tab_hover               = Colour(0.9, 0.95, 1.0)
+tab_active_text         = Colour(0.0, 0.0, 0.0)
+tab_inactive_text       = Colour(0.25, 0.25, 0.25)
+tab_hover_text          = Colour(0.0, 0.0, 0.0)
+tab_close               = Colour(0.6, 0.6, 0.6)
+tab_close_hover         = Colour(1.0, 1.0, 1.0)
+tab_dirty               = Colour(1.0, 0.5, 0.0)
+fold_closed             = Colour(1.0, 0.5, 0.0)
+fold_closed_pressed     = Colour(1.0, 0.75, 0.25)
+fold_open               = Colour(0.5, 0.5, 0.5)
+fold_open_pressed       = Colour(0.75, 0.75, 0.75)
+scroll_bar_background   = Colour(0.97, 0.97, 0.97)
+scroll_bar_corner       = Colour(0.8, 0.8, 0.8)
+scroll_puck             = Colour(0.7, 0.7, 0.7)
+empty_window            = Colour(0.75, 0.75, 0.75)
+layout_divider          = Colour(0.4, 0.4, 0.4)
+minimap                 = Colour(1.0, 1.0, 0.0, 0.1)
+status_bar              = Colour(0.4, 0.4, 0.4)
+status_bar_label        = Colour(0.8, 0.95, 1.0)
+sidebar_selected        = Colour(1.0, 0.5, 0.0)
+sidebar_heading         = Colour(0.4, 0.4, 0.4)
+sb_file_text_hover      = Colour(0.5, 0.5, 0.5)
+sb_file_text_selected   = Colour(1.0, 1.0, 1.0)
+sb_folder_icon          = Colour(0.42, 0.42, 0.42)
+sb_folder_icon_hover    = Colour(0.7, 0.7, 0.7)
+sb_folder_icon_selected = Colour(1.0, 1.0, 1.0)
+large_button            = Colour(0.4, 0.4, 0.4)
+large_button_pressed    = Colour(0.5, 0.5, 0.5)
+large_button_text       = Colour(1.0, 1.0, 1.0)
+panel_background        = Colour(0.65, 0.65, 0.65)
+quick_panel_background  = Colour(0.3, 0.3, 0.3)
+qp_row                  = Colour(0.55, 0.55, 0.55)
+qp_row_selected         = Colour(1.0, 0.5, 0.0, 0.9)
+qp_text                 = Colour(1.0, 1.0, 1.0)
+qp_text_match           = Colour(0.78, 0.95, 1.0)
+qp_text_selected        = Colour(0.0, 0.0, 0.0)
+qp_text_match_selected  = Colour(0.78, 0.95, 1.0)
+qp_text_score           = Colour(1.0, 1.0, 0.0)
+qp_text_score_selected  = Colour(1.0, 1.0, 0.0)
+ac_background           = Colour(0.3, 0.3, 0.3)
+ac_text                 = Colour(1.0, 1.0, 1.0)
+ac_text_match           = Colour(0.78, 0.95, 1.0)
+ac_text_selected        = Colour(0.0, 0.0, 0.0)
+ac_text_match_selected  = Colour(0.78, 0.95, 1.0)
+ac_row_selected         = Colour(1.0, 0.5, 0.0)
+icon_button_off         = Colour(0.75, 0.75, 0.75)
+icon_button_on          = Colour(0.9, 0.9, 0.0)
+
+#-------------------------------------------------------------------------------
+#                                      THEMES
+#-------------------------------------------------------------------------------
+
+THEMES = {
+    2:  'graveshift',
+    6:  'dawn',
+    8:  'morning',
+    10: 'midday',
+    16:  'afternoon',
+    18:  'evening',
+    20:  'twilight',
+    22: 'night'
+}
+
+#-------------------------------------------------------------------------------
+#                                       LERP
+#-------------------------------------------------------------------------------
+
+import datetime
 
 
+def lerp_time(func):
+    # t = datetime.datetime.now().hour % 24
+    t = 16
+    t1 = (t + 1) % 24
+    # find current theme
+    t0 = t
+    theme_1 = ''
+    while not theme_1:
+        if t0 in THEMES:
+            theme_1 = THEMES[t0]
+        else:
+            t0 = (t0 - 1) % 24
+    # lerp?
+    theme_2 = ''
+    lerp = 0.0
+    if t1 in THEMES:
+        theme_2 = THEMES[t1]
+        lerp = datetime.datetime.now().minute / 60.0
+    # don't use lerp
+    if not theme_2:
+        return func(theme_1)
+    # lerp me up
+    colour_1 = func(theme_1)
+    colour_2 = func(theme_2)
+    return Colour(
+        (colour_1.r * (1.0 - lerp)) + (colour_2.r * lerp),
+        (colour_1.g * (1.0 - lerp)) + (colour_2.g * lerp),
+        (colour_1.b * (1.0 - lerp)) + (colour_2.b * lerp),
+        (colour_1.a * (1.0 - lerp)) + (colour_2.a * lerp)
+    )
+
+#-------------------------------------------------------------------------------
+#                                   BASE COLOURS
+#-------------------------------------------------------------------------------
+
+MIDDAY_ACCENT    = Colour(1.0, 0.5, 0.0)
+AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
+
+
+#-------------------------------------------------------------------------------
+#                                 COLOUR FUNCTIONS
+#-------------------------------------------------------------------------------
+
+#----------------------------------TEXT COLOURS---------------------------------
+
+def get_background(theme):
+    if theme == "midday":
+        return Colour(0.78, 0.95, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.98, 0.98, 0.82)
+    else:
+        return Colour(0.0, 0.0, 0.1)
+
+def get_caret(theme):
+    if theme == "midday":
+        return Colour(1.0, 0.5, 0.0)
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.1, 0.1, 0.1)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_line_highlight(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.7)
+    elif theme == 'afternoon':
+        return Colour(0.8, 0.9, 1.0)
+    else:
+        return Colour(1.0, 0.0, 0.0)
+
+def get_selection(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.0, 0.9)
+    elif theme == 'afternoon':
+        return Colour(0.1, 0.65, 0.1, 0.65)
+    else:
+        return Colour(1.0, 0.0, 0.0, 0.9)
+
+def get_inactive_selection(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.0, 0.2)
+    elif theme == 'afternoon':
+        return Colour(0.1, 0.65, 0.1, 0.3)
+    else:
+        return Colour(1.0, 0.0, 0.0, 0.2)
+
+def get_find_highlight(theme):
+    if theme == "midday":
+        return Colour(1.0, 0.5, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.3, 0.9, 0.3)
+    else:
+        return Colour(1.0, 0.0, 0.0)
+
+def get_line_numbers(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.5, 0.5, 0.5)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_guide(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.5, 0.5, 0.5)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_comment(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.5, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.4, 0.4, 0.4)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_literal(theme):
+    if theme == "midday":
+        return Colour(1.0, 0.05, 0.05)
+    elif theme == 'afternoon':
+        return Colour(0.3, 0.0, 0.9)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_string_literal(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.35, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.7, 0.0, 0.0)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_keyword(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.0, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.5, 0.0)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_entity_name(theme):
+    if theme == "midday":
+        return Colour(0.3, 0.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.3, 0.2, 0.2)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_modifier(theme):
+    if theme == "midday":
+        return Colour(0.8, 0.5, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.4, 0.7)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_variable(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.3, 0.2)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.4)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_builtin_func(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.0, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.3, 0.8)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_invalid_background(theme):
+    if theme == "midday":
+        return Colour(1.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 0.5, 0.0)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_invalid_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_include_background(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.2, 0.9)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_include_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.1, 1.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 0.8, 0.0)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+#-----------------------------------UI COLOURS----------------------------------
+
+def get_sidebar(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.92, 0.985, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_file_text(theme):
+    if theme == "midday":
+        return Colour(0.2, 0.2, 0.2)
+    elif theme == 'afternoon':
+        return Colour(0.1, 0.1, 0.1)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_sb_folder_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(1.0, 1.0, 1.0)
+
+def get_tab_background(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.6, 0.6, 0.6)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_active(theme):
+    if theme == "midday":
+        return Colour(0.85, 0.95, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.98, 0.98, 0.82)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_inactive(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.85, 0.85, 0.85)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_hover(theme):
+    if theme == "midday":
+        return Colour(0.9, 0.95, 1.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 1.0, 0.94)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_active_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_inactive_text(theme):
+    if theme == "midday":
+        return Colour(0.25, 0.25, 0.25)
+    elif theme == 'afternoon':
+        return Colour(0.25, 0.25, 0.25)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_hover_text(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_close(theme):
+    if theme == "midday":
+        return Colour(0.6, 0.6, 0.6)
+    elif theme == 'afternoon':
+        return Colour(0.6, 0.6, 0.6)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_close_hover(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 1.0, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_tab_dirty(theme):
+    if theme == "midday":
+        return MIDDAY_ACCENT
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(0.0, 0.0, 0.0)
 
 #-------------------------------------------------------------------------------
 #                                      SCRIPT
@@ -1355,40 +1783,83 @@ UI_THEME_PATH = os.path.join(THEME_DIRECTORY, 'Circadian.sublime-theme')
 # write the text theme
 with open(TEXT_THEME_PATH, 'w') as f:
     f.write(TEXT_THEME_DATA.format(
-        background=background.to_hex(),
-        caret=caret.to_hex(),
-        text=text.to_hex(),
-        line_highlight=line_highlight.to_hex(),
-        selection=selection.to_hex(),
-        find_highlight=find_highlight.to_hex(),
-        inactive_selection=inactive_selection.to_hex(),
-        line_numbers=line_numbers.to_hex(),
-        guide=guide.to_hex(),
-        comment=comment.to_hex(),
-        literal=literal.to_hex(),
-        string_literal=string_literal.to_hex(),
-        keyword=keyword.to_hex(),
-        entity_name=entity_name.to_hex(),
-        modifier=modifier.to_hex(),
-        variable=variable.to_hex(),
-        builtin_func=builtin_func.to_hex(),
-        invalid_background=invalid_background.to_hex(),
-        invalid_text=invalid_text.to_hex(),
-        include_background=include_background.to_hex(),
-        include_text=include_text.to_hex()
+        background=lerp_time(get_background).to_hex(),
+        caret=lerp_time(get_caret).to_hex(),
+        text=lerp_time(get_text).to_hex(),
+        line_highlight=lerp_time(get_line_highlight).to_hex(),
+        selection=lerp_time(get_selection).to_hex(),
+        inactive_selection=lerp_time(get_inactive_selection).to_hex(),
+        find_highlight=lerp_time(get_find_highlight).to_hex(),
+        line_numbers=lerp_time(get_line_numbers).to_hex(),
+        guide=lerp_time(get_guide).to_hex(),
+        comment=lerp_time(get_comment).to_hex(),
+        literal=lerp_time(get_literal).to_hex(),
+        string_literal=lerp_time(get_string_literal).to_hex(),
+        keyword=lerp_time(get_keyword).to_hex(),
+        entity_name=lerp_time(get_entity_name).to_hex(),
+        modifier=lerp_time(get_modifier).to_hex(),
+        variable=lerp_time(get_variable).to_hex(),
+        builtin_func=lerp_time(get_builtin_func).to_hex(),
+        invalid_background=lerp_time(get_invalid_background).to_hex(),
+        invalid_text=lerp_time(get_invalid_text).to_hex(),
+        include_background=lerp_time(get_include_background).to_hex(),
+        include_text=lerp_time(get_include_text).to_hex()
     ))
 
 # write the ui theme
 with open(UI_THEME_PATH, 'w') as f:
     f.write(UI_THEME_DATA.format(
-        sidebar=sidebar.to_tuple(),
-        sb_file_text=sb_file_text.to_tuple(),
-        sb_folder_text=sb_folder_text.to_tuple(),
-        tab_background=tab_background.to_tuple(),
-        tab_active=tab_active.to_tuple(),
-        tab_inactive=tab_inactive.to_tuple(),
-        tab_hover=tab_hover.to_tuple(),
-        tab_active_text=tab_active_text.to_tuple(),
-        tab_inactive_text=tab_inactive_text.to_tuple(),
-        tab_hover_text=tab_hover_text.to_tuple()
+        sidebar=lerp_time(get_sidebar).to_tuple(),
+        sb_file_text=lerp_time(get_sb_file_text).to_tuple(),
+        sb_folder_text=lerp_time(get_sb_folder_text).to_tuple(),
+        tab_background=lerp_time(get_tab_background).to_tuple(),
+        tab_active=lerp_time(get_tab_active).to_tuple(),
+        tab_inactive=lerp_time(get_tab_inactive).to_tuple(),
+        tab_hover=lerp_time(get_tab_hover).to_tuple(),
+        tab_active_text=lerp_time(get_tab_active_text).to_tuple(),
+        tab_inactive_text=lerp_time(get_tab_inactive_text).to_tuple(),
+        tab_hover_text=lerp_time(get_tab_hover_text).to_tuple(),
+        tab_close=lerp_time(get_tab_close).to_tuple(),
+        tab_close_hover=lerp_time(get_tab_close_hover).to_tuple(),
+        tab_dirty=lerp_time(get_tab_dirty).to_tuple(),
+        fold_closed=fold_closed.to_tuple(),
+        fold_closed_pressed=fold_closed_pressed.to_tuple(),
+        fold_open=fold_open.to_tuple(),
+        fold_open_pressed=fold_open_pressed.to_tuple(),
+        scroll_bar_background=scroll_bar_background.to_tuple(),
+        scroll_bar_corner=scroll_bar_corner.to_tuple(),
+        scroll_puck=scroll_puck.to_tuple(),
+        empty_window=empty_window.to_tuple(),
+        layout_divider=layout_divider.to_tuple(),
+        minimap=minimap.to_tuple(),
+        status_bar=status_bar.to_tuple(),
+        status_bar_label=status_bar_label.to_tuple(),
+        sidebar_selected=sidebar_selected.to_tuple(),
+        sidebar_heading=sidebar_heading.to_tuple(),
+        sb_file_text_hover=sb_file_text_hover.to_tuple(),
+        sb_file_text_selected=sb_file_text_selected.to_tuple(),
+        sb_folder_icon=sb_folder_icon.to_tuple(),
+        sb_folder_icon_hover=sb_folder_icon_hover.to_tuple(),
+        sb_folder_icon_selected=sb_folder_icon_selected.to_tuple(),
+        large_button=large_button.to_tuple(),
+        large_button_pressed=large_button_pressed.to_tuple(),
+        large_button_text=large_button_text.to_tuple(),
+        panel_background=panel_background.to_tuple(),
+        quick_panel_background=quick_panel_background.to_tuple(),
+        qp_row=qp_row.to_tuple(),
+        qp_row_selected=qp_row_selected.to_tuple(),
+        qp_text=qp_text.to_tuple(),
+        qp_text_match=qp_text_match.to_tuple(),
+        qp_text_selected=qp_text_selected.to_tuple(),
+        qp_text_match_selected=qp_text_match_selected.to_tuple(),
+        qp_text_score=qp_text_score.to_tuple(),
+        qp_text_score_selected=qp_text_score_selected.to_tuple(),
+        ac_background=ac_background.to_tuple(),
+        ac_text=ac_text.to_tuple(),
+        ac_text_match=ac_text_match.to_tuple(),
+        ac_text_selected=ac_text_selected.to_tuple(),
+        ac_text_match_selected=ac_text_match_selected.to_tuple(),
+        ac_row_selected=ac_row_selected.to_tuple(),
+        icon_button_off=icon_button_off.to_tuple(),
+        icon_button_on=icon_button_on.to_tuple()
     ))
