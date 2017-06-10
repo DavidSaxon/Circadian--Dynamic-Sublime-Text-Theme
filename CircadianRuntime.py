@@ -1339,88 +1339,6 @@ class Colour(object):
         s += ']'
         return s
 
-
-#-------------------------------------------------------------------------------
-#                                 DEFAULT COLOURS
-#-------------------------------------------------------------------------------
-
-background              = Colour(0.78, 0.95, 1.0)
-caret                   = Colour(1.0, 0.5, 0.0)
-text                    = Colour(0.0, 0.0, 0.0)
-line_highlight          = Colour(1.0, 1.0, 0.7)
-selection               = Colour(1.0, 1.0, 0.0)
-inactive_selection      = Colour(1.0, 1.0, 0.0, 0.2)
-find_highlight          = Colour(1.0, 0.5, 0.0)
-line_numbers            = Colour(0.4, 0.4, 0.4)
-guide                   = Colour(0.4, 0.4, 0.4)
-comment                 = Colour(0.5, 0.5, 0.5)
-literal                 = Colour(1.0, 0.05, 0.05)
-string_literal          = Colour(0.0, 0.35, 0.0)
-keyword                 = Colour(0.5, 0.0, 0.5)
-entity_name             = Colour(0.3, 0.0, 1.0)
-modifier                = Colour(0.8, 0.5, 0.0)
-variable                = Colour(0.0, 0.3, 0.2)
-builtin_func            = Colour(0.5, 0.0, 0.5)
-invalid_background      = Colour(1.0, 0.0, 0.0)
-invalid_text            = Colour(0.0, 0.0, 0.0)
-include_background      = Colour(0.4, 0.4, 0.4, 0.4)
-include_text            = Colour(0.0, 0.1, 1.0)
-
-
-sidebar                 = Colour(1.0, 1.0, 1.0)
-sb_file_text            = Colour(0.2, 0.2, 0.2)
-sb_folder_text          = Colour(0.0, 0.0, 0.0)
-tab_background          = Colour(1.0, 1.0, 1.0)
-tab_active              = Colour(0.85, 0.95, 1.0)
-tab_inactive            = Colour(1.0, 1.0, 1.0)
-tab_hover               = Colour(0.9, 0.95, 1.0)
-tab_active_text         = Colour(0.0, 0.0, 0.0)
-tab_inactive_text       = Colour(0.25, 0.25, 0.25)
-tab_hover_text          = Colour(0.0, 0.0, 0.0)
-tab_close               = Colour(0.6, 0.6, 0.6)
-tab_close_hover         = Colour(1.0, 1.0, 1.0)
-tab_dirty               = Colour(1.0, 0.5, 0.0)
-fold_closed             = Colour(1.0, 0.5, 0.0)
-fold_closed_pressed     = Colour(1.0, 0.75, 0.25)
-fold_open               = Colour(0.5, 0.5, 0.5)
-fold_open_pressed       = Colour(0.75, 0.75, 0.75)
-scroll_bar_background   = Colour(0.97, 0.97, 0.97)
-scroll_bar_corner       = Colour(0.8, 0.8, 0.8)
-scroll_puck             = Colour(0.7, 0.7, 0.7)
-empty_window            = Colour(0.75, 0.75, 0.75)
-layout_divider          = Colour(0.4, 0.4, 0.4)
-minimap                 = Colour(1.0, 1.0, 0.0, 0.1)
-status_bar              = Colour(0.4, 0.4, 0.4)
-status_bar_label        = Colour(0.8, 0.95, 1.0)
-sidebar_selected        = Colour(1.0, 0.5, 0.0)
-sidebar_heading         = Colour(0.4, 0.4, 0.4)
-sb_file_text_hover      = Colour(0.5, 0.5, 0.5)
-sb_file_text_selected   = Colour(1.0, 1.0, 1.0)
-sb_folder_icon          = Colour(0.42, 0.42, 0.42)
-sb_folder_icon_hover    = Colour(0.7, 0.7, 0.7)
-sb_folder_icon_selected = Colour(1.0, 1.0, 1.0)
-large_button            = Colour(0.4, 0.4, 0.4)
-large_button_pressed    = Colour(0.5, 0.5, 0.5)
-large_button_text       = Colour(1.0, 1.0, 1.0)
-panel_background        = Colour(0.65, 0.65, 0.65)
-quick_panel_background  = Colour(0.3, 0.3, 0.3)
-qp_row                  = Colour(0.55, 0.55, 0.55)
-qp_row_selected         = Colour(1.0, 0.5, 0.0, 0.9)
-qp_text                 = Colour(1.0, 1.0, 1.0)
-qp_text_match           = Colour(0.78, 0.95, 1.0)
-qp_text_selected        = Colour(0.0, 0.0, 0.0)
-qp_text_match_selected  = Colour(0.78, 0.95, 1.0)
-qp_text_score           = Colour(1.0, 1.0, 0.0)
-qp_text_score_selected  = Colour(1.0, 1.0, 0.0)
-ac_background           = Colour(0.3, 0.3, 0.3)
-ac_text                 = Colour(1.0, 1.0, 1.0)
-ac_text_match           = Colour(0.78, 0.95, 1.0)
-ac_text_selected        = Colour(0.0, 0.0, 0.0)
-ac_text_match_selected  = Colour(0.78, 0.95, 1.0)
-ac_row_selected         = Colour(1.0, 0.5, 0.0)
-icon_button_off         = Colour(0.75, 0.75, 0.75)
-icon_button_on          = Colour(0.9, 0.9, 0.0)
-
 #-------------------------------------------------------------------------------
 #                                      THEMES
 #-------------------------------------------------------------------------------
@@ -1430,9 +1348,9 @@ THEMES = {
     6:  'dawn',
     8:  'morning',
     10: 'midday',
-    16:  'afternoon',
-    18:  'evening',
-    20:  'twilight',
+    16: 'afternoon',
+    18: 'evening',
+    20: 'twilight',
     22: 'night'
 }
 
@@ -1478,9 +1396,12 @@ def lerp_time(func):
 #                                   BASE COLOURS
 #-------------------------------------------------------------------------------
 
+#-------------------------------------MIDDAY------------------------------------
+MIDDAY_BG        = Colour(0.78, 0.95, 1.0)
 MIDDAY_ACCENT    = Colour(1.0, 0.5, 0.0)
+#-----------------------------------AFTERNOON-----------------------------------
+AFTERNOON_BG     = Colour(0.98, 0.98, 0.82)
 AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
-
 
 #-------------------------------------------------------------------------------
 #                                 COLOUR FUNCTIONS
@@ -1490,15 +1411,15 @@ AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
 
 def get_background(theme):
     if theme == "midday":
-        return Colour(0.78, 0.95, 1.0)
+        return MIDDAY_BG
     elif theme == 'afternoon':
-        return Colour(0.98, 0.98, 0.82)
+        return AFTERNOON_BG
     else:
         return Colour(0.0, 0.0, 0.1)
 
 def get_caret(theme):
     if theme == "midday":
-        return Colour(1.0, 0.5, 0.0)
+        return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
     else:
@@ -1524,7 +1445,7 @@ def get_selection(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0, 0.9)
     elif theme == 'afternoon':
-        return Colour(0.1, 0.65, 0.1, 0.65)
+        return Colour(0.6, 0.8, 1.0, 0.4)
     else:
         return Colour(1.0, 0.0, 0.0, 0.9)
 
@@ -1532,7 +1453,7 @@ def get_inactive_selection(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0, 0.2)
     elif theme == 'afternoon':
-        return Colour(0.1, 0.65, 0.1, 0.3)
+        return Colour(0.6, 0.8, 1.0, 0.2)
     else:
         return Colour(1.0, 0.0, 0.0, 0.2)
 
@@ -1662,7 +1583,7 @@ def get_sidebar(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
-        return Colour(0.92, 0.985, 1.0)
+        return Colour(0.9, 0.9, 0.9)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1762,12 +1683,337 @@ def get_tab_dirty(theme):
     else:
         return Colour(0.0, 0.0, 0.0)
 
-#-------------------------------------------------------------------------------
-#                                      SCRIPT
-#-------------------------------------------------------------------------------
+def get_fold_closed(theme):
+    if theme == "midday":
+        return MIDDAY_ACCENT
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(0.0, 0.0, 0.0)
 
-# generate the colours based on the time of day
-# TODO
+def get_fold_closed_pressed(theme):
+    if theme == "midday":
+        return Colour(1.0, 0.75, 0.25)
+    elif theme == 'afternoon':
+        return Colour(0.25, 0.85, 0.25)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_fold_open(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.5, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.5, 0.5, 0.5)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_fold_open_pressed(theme):
+    if theme == "midday":
+        return Colour(0.75, 0.75, 0.75)
+    elif theme == 'afternoon':
+        return Colour(0.75, 0.75, 0.75)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_fold_open_pressed(theme):
+    if theme == "midday":
+        return Colour(0.75, 0.75, 0.75)
+    elif theme == 'afternoon':
+        return Colour(0.75, 0.75, 0.75)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_scroll_bar_background(theme):
+    if theme == "midday":
+        return Colour(0.88, 0.88, 0.88)
+    elif theme == 'afternoon':
+        return Colour(0.78, 0.78, 0.78)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_scroll_bar_corner(theme):
+    if theme == "midday":
+        return Colour(0.7, 0.7, 0.7)
+    elif theme == 'afternoon':
+        return Colour(0.65, 0.65, 0.65)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_scroll_puck(theme):
+    if theme == "midday":
+        return Colour(0.6, 0.6, 0.6)
+    elif theme == 'afternoon':
+        return Colour(0.5, 0.5, 0.5)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_empty_window(theme):
+    if theme == "midday":
+        return Colour(0.75, 0.75, 0.75)
+    elif theme == 'afternoon':
+        return Colour(0.55, 0.55, 0.55)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_layout_divider(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.4, 0.4, 0.4)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_minimap(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.0, 0.1)
+    elif theme == 'afternoon':
+        return Colour(0.2, 0.8, 1.0, 0.16)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_status_bar(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.35, 0.35, 0.35)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_status_bar_label(theme):
+    if theme == "midday":
+        return Colour(0.8, 0.95, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.98, 0.98, 0.82)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sidebar_selected(theme):
+    if theme == "midday":
+        return MIDDAY_ACCENT
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sidebar_heading(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.37, 0.37, 0.37)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_file_text_hover(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.5, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.42, 0.42, 0.42)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_file_text_selected(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 1.0, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_folder_icon(theme):
+    if theme == "midday":
+        return Colour(0.42, 0.42, 0.42)
+    elif theme == 'afternoon':
+        return Colour(0.42, 0.42, 0.42)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_folder_icon_hover(theme):
+    if theme == "midday":
+        return Colour(0.7, 0.7, 0.7)
+    elif theme == 'afternoon':
+        return Colour(0.7, 0.7, 0.7)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_sb_folder_icon_selected(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(1.0, 1.0, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_large_button(theme):
+    if theme == "midday":
+        return Colour(0.4, 0.4, 0.4)
+    elif theme == 'afternoon':
+        return Colour(0.3, 0.3, 0.3)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_large_button_pressed(theme):
+    if theme == "midday":
+        return Colour(0.5, 0.5, 0.5)
+    elif theme == 'afternoon':
+        return Colour(0.4, 0.4, 0.4)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_large_button_text(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.9, 0.9, 0.9)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_panel_background(theme):
+    if theme == "midday":
+        return Colour(0.65, 0.65, 0.65)
+    elif theme == 'afternoon':
+        return Colour(0.55, 0.55, 0.55)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_quick_panel_background(theme):
+    if theme == "midday":
+        return Colour(0.3, 0.3, 0.3)
+    elif theme == 'afternoon':
+        return Colour(0.25, 0.25, 0.25)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_row(theme):
+    if theme == "midday":
+        return Colour(0.55, 0.55, 0.55)
+    elif theme == 'afternoon':
+        return Colour(0.45, 0.45, 0.45)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_row_selected(theme):
+    if theme == "midday":
+        return MIDDAY_ACCENT
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.95, 0.95, 0.95)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text_match(theme):
+    if theme == "midday":
+        return MIDDAY_BG
+    elif theme == 'afternoon':
+        return AFTERNOON_BG
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text_selected(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text_match_selected(theme):
+    if theme == "midday":
+        return MIDDAY_BG
+    elif theme == 'afternoon':
+        return AFTERNOON_BG
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text_score(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.85, 0.95, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_qp_text_score_selected(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.85, 0.95, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_background(theme):
+    if theme == "midday":
+        return Colour(0.45, 0.45, 0.45)
+    elif theme == 'afternoon':
+        return Colour(0.4, 0.4, 0.4)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_text(theme):
+    if theme == "midday":
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'afternoon':
+        return Colour(0.95, 0.95, 0.95)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_text_match(theme):
+    if theme == "midday":
+        return MIDDAY_BG
+    elif theme == 'afternoon':
+        return AFTERNOON_BG
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_text_selected(theme):
+    if theme == "midday":
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_text_match_selected(theme):
+    if theme == "midday":
+        return MIDDAY_BG
+    elif theme == 'afternoon':
+        return AFTERNOON_BG
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_ac_row_selected(theme):
+    if theme == "midday":
+        return MIDDAY_ACCENT
+    elif theme == 'afternoon':
+        return AFTERNOON_ACCENT
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_icon_button_off(theme):
+    if theme == "midday":
+        return Colour(0.75, 0.75, 0.75)
+    elif theme == 'afternoon':
+        return Colour(0.7, 0.7, 0.7)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+def get_icon_button_on(theme):
+    if theme == "midday":
+        return Colour(0.9, 0.9, 0.0)
+    elif theme == 'afternoon':
+        return Colour(0.65, 0.85, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
+
+#-------------------------------------------------------------------------------
+#                             APPLY COLOURS AND WRITE
+#-------------------------------------------------------------------------------
 
 import os
 
@@ -1822,44 +2068,44 @@ with open(UI_THEME_PATH, 'w') as f:
         tab_close=lerp_time(get_tab_close).to_tuple(),
         tab_close_hover=lerp_time(get_tab_close_hover).to_tuple(),
         tab_dirty=lerp_time(get_tab_dirty).to_tuple(),
-        fold_closed=fold_closed.to_tuple(),
-        fold_closed_pressed=fold_closed_pressed.to_tuple(),
-        fold_open=fold_open.to_tuple(),
-        fold_open_pressed=fold_open_pressed.to_tuple(),
-        scroll_bar_background=scroll_bar_background.to_tuple(),
-        scroll_bar_corner=scroll_bar_corner.to_tuple(),
-        scroll_puck=scroll_puck.to_tuple(),
-        empty_window=empty_window.to_tuple(),
-        layout_divider=layout_divider.to_tuple(),
-        minimap=minimap.to_tuple(),
-        status_bar=status_bar.to_tuple(),
-        status_bar_label=status_bar_label.to_tuple(),
-        sidebar_selected=sidebar_selected.to_tuple(),
-        sidebar_heading=sidebar_heading.to_tuple(),
-        sb_file_text_hover=sb_file_text_hover.to_tuple(),
-        sb_file_text_selected=sb_file_text_selected.to_tuple(),
-        sb_folder_icon=sb_folder_icon.to_tuple(),
-        sb_folder_icon_hover=sb_folder_icon_hover.to_tuple(),
-        sb_folder_icon_selected=sb_folder_icon_selected.to_tuple(),
-        large_button=large_button.to_tuple(),
-        large_button_pressed=large_button_pressed.to_tuple(),
-        large_button_text=large_button_text.to_tuple(),
-        panel_background=panel_background.to_tuple(),
-        quick_panel_background=quick_panel_background.to_tuple(),
-        qp_row=qp_row.to_tuple(),
-        qp_row_selected=qp_row_selected.to_tuple(),
-        qp_text=qp_text.to_tuple(),
-        qp_text_match=qp_text_match.to_tuple(),
-        qp_text_selected=qp_text_selected.to_tuple(),
-        qp_text_match_selected=qp_text_match_selected.to_tuple(),
-        qp_text_score=qp_text_score.to_tuple(),
-        qp_text_score_selected=qp_text_score_selected.to_tuple(),
-        ac_background=ac_background.to_tuple(),
-        ac_text=ac_text.to_tuple(),
-        ac_text_match=ac_text_match.to_tuple(),
-        ac_text_selected=ac_text_selected.to_tuple(),
-        ac_text_match_selected=ac_text_match_selected.to_tuple(),
-        ac_row_selected=ac_row_selected.to_tuple(),
-        icon_button_off=icon_button_off.to_tuple(),
-        icon_button_on=icon_button_on.to_tuple()
+        fold_closed=lerp_time(get_fold_closed).to_tuple(),
+        fold_closed_pressed=lerp_time(get_fold_closed_pressed).to_tuple(),
+        fold_open=lerp_time(get_fold_open).to_tuple(),
+        fold_open_pressed=lerp_time(get_fold_open_pressed).to_tuple(),
+        scroll_bar_background=lerp_time(get_scroll_bar_background).to_tuple(),
+        scroll_bar_corner=lerp_time(get_scroll_bar_corner).to_tuple(),
+        scroll_puck=lerp_time(get_scroll_puck).to_tuple(),
+        empty_window=lerp_time(get_empty_window).to_tuple(),
+        layout_divider=lerp_time(get_layout_divider).to_tuple(),
+        minimap=lerp_time(get_minimap).to_tuple(),
+        status_bar=lerp_time(get_status_bar).to_tuple(),
+        status_bar_label=lerp_time(get_status_bar_label).to_tuple(),
+        sidebar_selected=lerp_time(get_sidebar_selected).to_tuple(),
+        sidebar_heading=lerp_time(get_sidebar_heading).to_tuple(),
+        sb_file_text_hover=lerp_time(get_sb_file_text_hover).to_tuple(),
+        sb_file_text_selected=lerp_time(get_sb_file_text_selected).to_tuple(),
+        sb_folder_icon=lerp_time(get_sb_folder_icon).to_tuple(),
+        sb_folder_icon_hover=lerp_time(get_sb_folder_icon_hover).to_tuple(),
+        sb_folder_icon_selected=lerp_time(get_sb_folder_icon_selected).to_tuple(),
+        large_button=lerp_time(get_large_button).to_tuple(),
+        large_button_pressed=lerp_time(get_large_button_pressed).to_tuple(),
+        large_button_text=lerp_time(get_large_button_text).to_tuple(),
+        panel_background=lerp_time(get_panel_background).to_tuple(),
+        quick_panel_background=lerp_time(get_quick_panel_background).to_tuple(),
+        qp_row=lerp_time(get_qp_row).to_tuple(),
+        qp_row_selected=lerp_time(get_qp_row_selected).to_tuple(),
+        qp_text=lerp_time(get_qp_text).to_tuple(),
+        qp_text_match=lerp_time(get_qp_text_match).to_tuple(),
+        qp_text_selected=lerp_time(get_qp_text_selected).to_tuple(),
+        qp_text_match_selected=lerp_time(get_qp_text_match_selected).to_tuple(),
+        qp_text_score=lerp_time(get_qp_text_score).to_tuple(),
+        qp_text_score_selected=lerp_time(get_qp_text_score_selected).to_tuple(),
+        ac_background=lerp_time(get_ac_background).to_tuple(),
+        ac_text=lerp_time(get_ac_text).to_tuple(),
+        ac_text_match=lerp_time(get_ac_text_match).to_tuple(),
+        ac_text_selected=lerp_time(get_ac_text_selected).to_tuple(),
+        ac_text_match_selected=lerp_time(get_ac_text_match_selected).to_tuple(),
+        ac_row_selected=lerp_time(get_ac_row_selected).to_tuple(),
+        icon_button_off=lerp_time(get_icon_button_off).to_tuple(),
+        icon_button_on=lerp_time(get_icon_button_on).to_tuple()
     ))
