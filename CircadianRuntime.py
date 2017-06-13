@@ -11,7 +11,7 @@ TEXT_THEME_DATA = \
     <key>author</key>
     <string>David Saxon</string>
     <key>comment</key>
-    <string>A low contrast grey colour scheme</string>
+    <string>A dynamic colour scheme to match the time of day</string>
     <key>name</key>
     <string>Circadian</string>
     <key>settings</key>
@@ -1363,7 +1363,7 @@ import datetime
 
 def lerp_time(func):
     # t = datetime.datetime.now().hour % 24
-    t = 16
+    t = 18
     t1 = (t + 1) % 24
     # find current theme
     t0 = t
@@ -1402,6 +1402,9 @@ MIDDAY_ACCENT    = Colour(1.0, 0.5, 0.0)
 #-----------------------------------AFTERNOON-----------------------------------
 AFTERNOON_BG     = Colour(0.98, 0.98, 0.82)
 AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
+#------------------------------------EVENING------------------------------------
+EVENING_BG       = Colour(0.16, 0.14, 0.14)
+EVENING_ACCENT   = Colour(1.0, 0.2, 0.2)
 
 #-------------------------------------------------------------------------------
 #                                 COLOUR FUNCTIONS
@@ -1414,149 +1417,187 @@ def get_background(theme):
         return MIDDAY_BG
     elif theme == 'afternoon':
         return AFTERNOON_BG
+    elif theme == 'evening':
+        return EVENING_BG
     else:
-        return Colour(0.0, 0.0, 0.1)
+        return MIDDAY_BG
 
 def get_caret(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return MIDDAY_ACCENT
 
 def get_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.1, 0.1, 0.1)
-    else:
+    elif theme == 'evening':
         return Colour(1.0, 1.0, 1.0)
+    else:
+        return Colour(0.0, 0.0, 0.0)
 
 def get_line_highlight(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.7)
     elif theme == 'afternoon':
         return Colour(0.8, 0.9, 1.0)
+    elif theme == 'evening':
+        return Colour(0.5, 0.0, 0.0)
     else:
-        return Colour(1.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 0.7)
 
 def get_selection(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0, 0.9)
     elif theme == 'afternoon':
         return Colour(0.6, 0.8, 1.0, 0.4)
+    elif theme == 'evening':
+        return Colour(0.6, 0.8, 1.0, 0.6)
     else:
-        return Colour(1.0, 0.0, 0.0, 0.9)
+        return Colour(1.0, 1.0, 0.0, 0.9)
 
 def get_inactive_selection(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0, 0.2)
     elif theme == 'afternoon':
         return Colour(0.6, 0.8, 1.0, 0.2)
+    elif theme == 'evening':
+        return Colour(0.6, 0.8, 1.0, 0.2)
     else:
-        return Colour(1.0, 0.0, 0.0, 0.2)
+        return Colour(1.0, 1.0, 0.0, 0.2)
 
 def get_find_highlight(theme):
     if theme == "midday":
         return Colour(1.0, 0.5, 0.0)
     elif theme == 'afternoon':
         return Colour(0.3, 0.9, 0.3)
+    elif theme == 'evening':
+        return Colour(0.6, 0.8, 1.0)
     else:
-        return Colour(1.0, 0.0, 0.0)
+        return Colour(1.0, 0.5, 0.0)
 
 def get_line_numbers(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.5, 0.5, 0.5)
+    elif theme == 'evening':
+        return Colour(0.6, 0.6, 0.6)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_guide(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.5, 0.5, 0.5)
+    elif theme == 'evening':
+        return Colour(0.6, 0.6, 0.6)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_comment(theme):
     if theme == "midday":
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'afternoon':
         return Colour(0.4, 0.4, 0.4)
+    elif theme == 'evening':
+        return Colour(0.45, 0.45, 0.7)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_literal(theme):
     if theme == "midday":
         return Colour(1.0, 0.05, 0.05)
     elif theme == 'afternoon':
         return Colour(0.3, 0.0, 0.9)
+    elif theme == 'evening':
+        return Colour(1.0, 0.7, 0.4)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(1.0, 0.05, 0.05)
 
 def get_string_literal(theme):
     if theme == "midday":
         return Colour(0.0, 0.35, 0.0)
     elif theme == 'afternoon':
         return Colour(0.7, 0.0, 0.0)
+    elif theme == 'evening':
+        return Colour(1.0, 0.0, 0.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.35, 0.0)
 
 def get_keyword(theme):
     if theme == "midday":
         return Colour(0.5, 0.0, 0.5)
     elif theme == 'afternoon':
         return Colour(0.0, 0.5, 0.0)
+    elif theme == 'evening':
+        return Colour(0.4, 0.6, 1.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.5, 0.0, 0.5)
 
 def get_entity_name(theme):
     if theme == "midday":
         return Colour(0.3, 0.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.3, 0.2, 0.2)
+    elif theme == 'evening':
+        return Colour(1.0, 0.2, 0.6)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.3, 0.0, 1.0)
 
 def get_modifier(theme):
     if theme == "midday":
         return Colour(0.8, 0.5, 0.0)
     elif theme == 'afternoon':
         return Colour(0.0, 0.4, 0.7)
+    elif theme == 'evening':
+        return Colour(1.0, 0.3, 0.3)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.8, 0.5, 0.0)
 
 def get_variable(theme):
     if theme == "midday":
         return Colour(0.0, 0.3, 0.2)
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.4)
+    elif theme == 'evening':
+        return Colour(1.0, 0.3, 1.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.3, 0.2)
 
 def get_builtin_func(theme):
     if theme == "midday":
         return Colour(0.5, 0.0, 0.5)
     elif theme == 'afternoon':
         return Colour(0.0, 0.3, 0.8)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.5)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.5, 0.0, 0.5)
 
 def get_invalid_background(theme):
     if theme == "midday":
         return Colour(1.0, 0.0, 0.0)
     elif theme == 'afternoon':
         return Colour(1.0, 0.5, 0.0)
+    elif theme == 'evening':
+        return Colour(0.0, 1.0, 0.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(1.0, 0.0, 0.0)
 
 def get_invalid_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
         return Colour(0.0, 0.0, 0.0)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -1566,16 +1607,20 @@ def get_include_background(theme):
         return Colour(0.4, 0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.2, 0.9)
+    elif theme == 'evening':
+        return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.4, 0.4, 0.4, 0.4)
 
 def get_include_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.1, 1.0)
     elif theme == 'afternoon':
         return Colour(1.0, 0.8, 0.0)
+    elif theme == 'evening':
+        return Colour(0.0, 0.0, 0.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.1, 1.0)
 
 #-----------------------------------UI COLOURS----------------------------------
 
@@ -1584,61 +1629,77 @@ def get_sidebar(theme):
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.9, 0.9, 0.9)
+    elif theme == 'evening':
+        return Colour(0.4, 0.4, 0.4)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_sb_file_text(theme):
     if theme == "midday":
         return Colour(0.2, 0.2, 0.2)
     elif theme == 'afternoon':
         return Colour(0.1, 0.1, 0.1)
+    elif theme == 'evening':
+        return Colour(0.1, 0.0, 0.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.2, 0.2, 0.2)
 
 def get_sb_folder_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
+        return Colour(0.1, 0.0, 0.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_tab_background(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.6, 0.6, 0.6)
+    elif theme == 'evening':
+        return Colour(0.34, 0.3, 0.3)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_tab_active(theme):
     if theme == "midday":
         return Colour(0.85, 0.95, 1.0)
     elif theme == 'afternoon':
         return Colour(0.98, 0.98, 0.82)
+    elif theme == 'evening':
+        return Colour(0.85, 0.65, 0.3)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.85, 0.95, 1.0)
 
 def get_tab_inactive(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.85, 0.85, 0.85)
+    elif theme == 'evening':
+        return Colour(0.55, 0.55, 0.55)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_tab_hover(theme):
     if theme == "midday":
         return Colour(0.9, 0.95, 1.0)
     elif theme == 'afternoon':
         return Colour(1.0, 1.0, 0.94)
+    elif theme == 'evening':
+        return Colour(0.75, 0.65, 0.5)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.9, 0.95, 1.0)
 
 def get_tab_active_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
         return Colour(0.0, 0.0, 0.0)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -1648,14 +1709,18 @@ def get_tab_inactive_text(theme):
         return Colour(0.25, 0.25, 0.25)
     elif theme == 'afternoon':
         return Colour(0.25, 0.25, 0.25)
+    elif theme == 'evening':
+        return Colour(0.95, 0.95, 0.95)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.25, 0.25, 0.25)
 
 def get_tab_hover_text(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
+        return Colour(0.95, 0.95, 0.95)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1664,261 +1729,317 @@ def get_tab_close(theme):
         return Colour(0.6, 0.6, 0.6)
     elif theme == 'afternoon':
         return Colour(0.6, 0.6, 0.6)
+    elif theme == 'evening':
+        return Colour(0.8, 0.8, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.6, 0.6, 0.6)
 
 def get_tab_close_hover(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(1.0, 1.0, 1.0)
+    elif theme == 'evening':
+        return Colour(1.0, 1.0, 1.0)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_tab_dirty(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_ACCENT
 
 def get_fold_closed(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_ACCENT
 
 def get_fold_closed_pressed(theme):
     if theme == "midday":
         return Colour(1.0, 0.75, 0.25)
     elif theme == 'afternoon':
         return Colour(0.25, 0.85, 0.25)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.5)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 0.75, 0.25)
 
 def get_fold_open(theme):
     if theme == "midday":
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'afternoon':
         return Colour(0.5, 0.5, 0.5)
+    elif theme == 'evening':
+        return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_fold_open_pressed(theme):
     if theme == "midday":
         return Colour(0.75, 0.75, 0.75)
     elif theme == 'afternoon':
         return Colour(0.75, 0.75, 0.75)
+    elif theme == 'evening':
+        return Colour(1.0, 1.0, 1.0)
     else:
-        return Colour(0.0, 0.0, 0.0)
-
-def get_fold_open_pressed(theme):
-    if theme == "midday":
         return Colour(0.75, 0.75, 0.75)
-    elif theme == 'afternoon':
-        return Colour(0.75, 0.75, 0.75)
-    else:
-        return Colour(0.0, 0.0, 0.0)
 
 def get_scroll_bar_background(theme):
     if theme == "midday":
         return Colour(0.88, 0.88, 0.88)
     elif theme == 'afternoon':
         return Colour(0.78, 0.78, 0.78)
+    elif theme == 'evening':
+        return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.88, 0.88, 0.88)
 
 def get_scroll_bar_corner(theme):
     if theme == "midday":
         return Colour(0.7, 0.7, 0.7)
     elif theme == 'afternoon':
         return Colour(0.65, 0.65, 0.65)
+    elif theme == 'evening':
+        return Colour(0.3, 0.3, 0.3)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.7, 0.7, 0.7)
 
 def get_scroll_puck(theme):
     if theme == "midday":
         return Colour(0.6, 0.6, 0.6)
     elif theme == 'afternoon':
         return Colour(0.5, 0.5, 0.5)
+    elif theme == 'evening':
+        return Colour(0.5, 0.5, 0.5)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.6, 0.6, 0.6)
 
 def get_empty_window(theme):
     if theme == "midday":
         return Colour(0.75, 0.75, 0.75)
     elif theme == 'afternoon':
         return Colour(0.55, 0.55, 0.55)
+    elif theme == 'evening':
+        return Colour(0.14, 0.11, 0.11)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.75, 0.75, 0.75)
 
 def get_layout_divider(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.4, 0.4, 0.4)
+    elif theme == 'evening':
+        return Colour(0.55, 0.55, 0.55)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_minimap(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0, 0.1)
     elif theme == 'afternoon':
         return Colour(0.2, 0.8, 1.0, 0.16)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.0, 0.16)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 0.0, 0.1)
 
 def get_status_bar(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.35, 0.35, 0.35)
+    elif theme == 'evening':
+        return Colour(0.25, 0.25, 0.25)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_status_bar_label(theme):
     if theme == "midday":
         return Colour(0.8, 0.95, 1.0)
     elif theme == 'afternoon':
         return Colour(0.98, 0.98, 0.82)
+    elif theme == 'evening':
+        return Colour(1.0, 0.8, 0.5)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.8, 0.95, 1.0)
 
 def get_sidebar_selected(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_ACCENT
 
 def get_sidebar_heading(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.37, 0.37, 0.37)
+    elif theme == 'evening':
+        return Colour(0.72, 0.72, 0.72)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_sb_file_text_hover(theme):
     if theme == "midday":
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'afternoon':
         return Colour(0.42, 0.42, 0.42)
+    elif theme == 'evening':
+        return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_sb_file_text_selected(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(1.0, 1.0, 1.0)
+    elif theme == 'evening':
+        return Colour(0.96, 0.96, 0.96)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_sb_folder_icon(theme):
     if theme == "midday":
         return Colour(0.42, 0.42, 0.42)
     elif theme == 'afternoon':
         return Colour(0.42, 0.42, 0.42)
+    elif theme == 'evening':
+        return Colour(0.55, 0.55, 0.55)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.42, 0.42, 0.42)
 
 def get_sb_folder_icon_hover(theme):
     if theme == "midday":
         return Colour(0.7, 0.7, 0.7)
     elif theme == 'afternoon':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'evening':
+        return Colour(0.65, 0.65, 0.65)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.7, 0.7, 0.7)
 
 def get_sb_folder_icon_selected(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(1.0, 1.0, 1.0)
+    elif theme == 'evening':
+        return Colour(0.96, 0.96, 0.96)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_large_button(theme):
     if theme == "midday":
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'afternoon':
         return Colour(0.3, 0.3, 0.3)
+    elif theme == 'evening':
+        return Colour(0.25, 0.25, 0.25)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.4, 0.4, 0.4)
 
 def get_large_button_pressed(theme):
     if theme == "midday":
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'afternoon':
         return Colour(0.4, 0.4, 0.4)
+    elif theme == 'evening':
+        return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_large_button_text(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.9, 0.9, 0.9)
+    elif theme == 'evening':
+        return Colour(0.8, 0.8, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_panel_background(theme):
     if theme == "midday":
         return Colour(0.65, 0.65, 0.65)
     elif theme == 'afternoon':
         return Colour(0.55, 0.55, 0.55)
+    elif theme == 'evening':
+        return Colour(0.43, 0.43, 0.43)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.65, 0.65, 0.65)
 
 def get_quick_panel_background(theme):
     if theme == "midday":
         return Colour(0.3, 0.3, 0.3)
     elif theme == 'afternoon':
         return Colour(0.25, 0.25, 0.25)
+    elif theme == 'evening':
+        return Colour(0.2, 0.2, 0.2)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.3, 0.3, 0.3)
 
 def get_qp_row(theme):
     if theme == "midday":
         return Colour(0.55, 0.55, 0.55)
     elif theme == 'afternoon':
         return Colour(0.45, 0.45, 0.45)
+    elif theme == 'evening':
+        return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.55, 0.55, 0.55)
 
 def get_qp_row_selected(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_ACCENT
 
 def get_qp_text(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.95, 0.95, 0.95)
+    elif theme == 'evening':
+        return Colour(0.85, 0.85, 0.85)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_qp_text_match(theme):
     if theme == "midday":
         return MIDDAY_BG
     elif theme == 'afternoon':
         return AFTERNOON_BG
+    elif theme == 'evening':
+        return Colour(1.0, 0.6, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_BG
 
 def get_qp_text_selected(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
         return Colour(0.0, 0.0, 0.0)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -1928,54 +2049,68 @@ def get_qp_text_match_selected(theme):
         return MIDDAY_BG
     elif theme == 'afternoon':
         return AFTERNOON_BG
+    elif theme == 'evening':
+        return Colour(1.0, 0.6, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_BG
 
 def get_qp_text_score(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.85, 0.95, 1.0)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.25)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 0.0)
 
 def get_qp_text_score_selected(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.85, 0.95, 1.0)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.0)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 0.0)
 
 def get_ac_background(theme):
     if theme == "midday":
         return Colour(0.45, 0.45, 0.45)
     elif theme == 'afternoon':
         return Colour(0.4, 0.4, 0.4)
+    elif theme == 'evening':
+        return Colour(0.25, 0.25, 0.25)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.45, 0.45, 0.45)
 
 def get_ac_text(theme):
     if theme == "midday":
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'afternoon':
         return Colour(0.95, 0.95, 0.95)
+    elif theme == 'evening':
+        return Colour(0.92, 0.92, 0.92)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_ac_text_match(theme):
     if theme == "midday":
         return MIDDAY_BG
     elif theme == 'afternoon':
         return AFTERNOON_BG
+    elif theme == 'evening':
+        return Colour(1.0, 0.6, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_BG
 
 def get_ac_text_selected(theme):
     if theme == "midday":
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
+    elif theme == 'evening':
+        return Colour(0.1, 0.1, 0.1)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1984,32 +2119,40 @@ def get_ac_text_match_selected(theme):
         return MIDDAY_BG
     elif theme == 'afternoon':
         return AFTERNOON_BG
+    elif theme == 'evening':
+        return Colour(1.0, 0.6, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_BG
 
 def get_ac_row_selected(theme):
     if theme == "midday":
         return MIDDAY_ACCENT
     elif theme == 'afternoon':
         return AFTERNOON_ACCENT
+    elif theme == 'evening':
+        return EVENING_ACCENT
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return MIDDAY_ACCENT
 
 def get_icon_button_off(theme):
     if theme == "midday":
         return Colour(0.75, 0.75, 0.75)
     elif theme == 'afternoon':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'evening':
+        return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.75, 0.75, 0.75)
 
 def get_icon_button_on(theme):
     if theme == "midday":
         return Colour(0.9, 0.9, 0.0)
     elif theme == 'afternoon':
         return Colour(0.65, 0.85, 1.0)
+    elif theme == 'evening':
+        return Colour(1.0, 0.5, 0.25)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.9, 0.9, 0.0)
 
 #-------------------------------------------------------------------------------
 #                             APPLY COLOURS AND WRITE
