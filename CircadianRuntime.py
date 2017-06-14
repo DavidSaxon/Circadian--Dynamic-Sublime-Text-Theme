@@ -1346,8 +1346,7 @@ class Colour(object):
 THEMES = {
     2:  'graveshift',
     6:  'dawn',
-    8:  'morning',
-    10: 'midday',
+    9:  'midday',
     16: 'afternoon',
     18: 'evening',
     20: 'twilight',
@@ -1363,7 +1362,7 @@ import datetime
 
 def lerp_time(func):
     # t = datetime.datetime.now().hour % 24
-    t = 18
+    t = 20
     t1 = (t + 1) % 24
     # find current theme
     t0 = t
@@ -1405,6 +1404,9 @@ AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
 #------------------------------------EVENING------------------------------------
 EVENING_BG       = Colour(0.16, 0.14, 0.14)
 EVENING_ACCENT   = Colour(1.0, 0.2, 0.2)
+#------------------------------------TWILIGHT-----------------------------------
+TWILIGHT_BG      = Colour(0.11, 0.11, 0.11)
+TWILIGHT_ACCENT  = Colour(0.6, 0.8, 1.0)
 
 #-------------------------------------------------------------------------------
 #                                 COLOUR FUNCTIONS
@@ -1419,6 +1421,8 @@ def get_background(theme):
         return AFTERNOON_BG
     elif theme == 'evening':
         return EVENING_BG
+    elif theme == 'twilight':
+        return TWILIGHT_BG
     else:
         return MIDDAY_BG
 
@@ -1429,6 +1433,8 @@ def get_caret(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -1439,6 +1445,8 @@ def get_text(theme):
         return Colour(0.1, 0.1, 0.1)
     elif theme == 'evening':
         return Colour(1.0, 1.0, 1.0)
+    elif theme == 'twilight':
+        return Colour(0.95, 0.95, 0.95)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1449,6 +1457,8 @@ def get_line_highlight(theme):
         return Colour(0.8, 0.9, 1.0)
     elif theme == 'evening':
         return Colour(0.5, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(0.2, 0.4, 0.6)
     else:
         return Colour(1.0, 1.0, 0.7)
 
@@ -1459,6 +1469,8 @@ def get_selection(theme):
         return Colour(0.6, 0.8, 1.0, 0.4)
     elif theme == 'evening':
         return Colour(0.6, 0.8, 1.0, 0.6)
+    elif theme == 'twilight':
+        return Colour(0.5, 0.8, 1.0, 0.6)
     else:
         return Colour(1.0, 1.0, 0.0, 0.9)
 
@@ -1469,6 +1481,8 @@ def get_inactive_selection(theme):
         return Colour(0.6, 0.8, 1.0, 0.2)
     elif theme == 'evening':
         return Colour(0.6, 0.8, 1.0, 0.2)
+    elif theme == 'twilight':
+        return Colour(0.5, 0.8, 1.0, 0.2)
     else:
         return Colour(1.0, 1.0, 0.0, 0.2)
 
@@ -1479,6 +1493,8 @@ def get_find_highlight(theme):
         return Colour(0.3, 0.9, 0.3)
     elif theme == 'evening':
         return Colour(0.6, 0.8, 1.0)
+    elif theme == 'twilight':
+        return Colour(0.8, 0.5, 1.0)
     else:
         return Colour(1.0, 0.5, 0.0)
 
@@ -1489,6 +1505,8 @@ def get_line_numbers(theme):
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'evening':
         return Colour(0.6, 0.6, 0.6)
+    elif theme == 'twilight':
+        return Colour(0.7, 0.7, 0.7)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1499,6 +1517,8 @@ def get_guide(theme):
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'evening':
         return Colour(0.6, 0.6, 0.6)
+    elif theme == 'twilight':
+        return Colour(0.7, 0.7, 0.7)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1509,6 +1529,8 @@ def get_comment(theme):
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'evening':
         return Colour(0.45, 0.45, 0.7)
+    elif theme == 'twilight':
+        return Colour(0.6, 0.5, 0.7)
     else:
         return Colour(0.5, 0.5, 0.5)
 
@@ -1519,6 +1541,8 @@ def get_literal(theme):
         return Colour(0.3, 0.0, 0.9)
     elif theme == 'evening':
         return Colour(1.0, 0.7, 0.4)
+    elif theme == 'twilight':
+        return Colour(0.6, 0.8, 1.0)
     else:
         return Colour(1.0, 0.05, 0.05)
 
@@ -1529,6 +1553,8 @@ def get_string_literal(theme):
         return Colour(0.7, 0.0, 0.0)
     elif theme == 'evening':
         return Colour(1.0, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(0.4, 0.6, 1.0)
     else:
         return Colour(0.0, 0.35, 0.0)
 
@@ -1539,6 +1565,8 @@ def get_keyword(theme):
         return Colour(0.0, 0.5, 0.0)
     elif theme == 'evening':
         return Colour(0.4, 0.6, 1.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.6, 1.0)
     else:
         return Colour(0.5, 0.0, 0.5)
 
@@ -1549,6 +1577,8 @@ def get_entity_name(theme):
         return Colour(0.3, 0.2, 0.2)
     elif theme == 'evening':
         return Colour(1.0, 0.2, 0.6)
+    elif theme == 'twilight':
+        return Colour(0.7, 0.0, 1.0)
     else:
         return Colour(0.3, 0.0, 1.0)
 
@@ -1559,6 +1589,8 @@ def get_modifier(theme):
         return Colour(0.0, 0.4, 0.7)
     elif theme == 'evening':
         return Colour(1.0, 0.3, 0.3)
+    elif theme == 'twilight':
+        return Colour(0.2, 0.8, 1.0)
     else:
         return Colour(0.8, 0.5, 0.0)
 
@@ -1569,6 +1601,8 @@ def get_variable(theme):
         return Colour(0.0, 0.0, 0.4)
     elif theme == 'evening':
         return Colour(1.0, 0.3, 1.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.4, 0.5)
     else:
         return Colour(0.0, 0.3, 0.2)
 
@@ -1579,6 +1613,8 @@ def get_builtin_func(theme):
         return Colour(0.0, 0.3, 0.8)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.5)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.2, 0.2)
     else:
         return Colour(0.5, 0.0, 0.5)
 
@@ -1589,6 +1625,8 @@ def get_invalid_background(theme):
         return Colour(1.0, 0.5, 0.0)
     elif theme == 'evening':
         return Colour(0.0, 1.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 1.0, 0.0)
     else:
         return Colour(1.0, 0.0, 0.0)
 
@@ -1598,6 +1636,8 @@ def get_invalid_text(theme):
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'twilight':
         return Colour(0.0, 0.0, 0.0)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -1609,6 +1649,8 @@ def get_include_background(theme):
         return Colour(0.0, 0.0, 0.2, 0.9)
     elif theme == 'evening':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'twilight':
+        return Colour(0.4, 0.1, 0.1)
     else:
         return Colour(0.4, 0.4, 0.4, 0.4)
 
@@ -1619,6 +1661,8 @@ def get_include_text(theme):
         return Colour(1.0, 0.8, 0.0)
     elif theme == 'evening':
         return Colour(0.0, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(0.9, 0.9, 0.9)
     else:
         return Colour(0.0, 0.1, 1.0)
 
@@ -1631,6 +1675,8 @@ def get_sidebar(theme):
         return Colour(0.9, 0.9, 0.9)
     elif theme == 'evening':
         return Colour(0.4, 0.4, 0.4)
+    elif theme == 'twilight':
+        return Colour(0.15, 0.15, 0.15)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1641,6 +1687,8 @@ def get_sb_file_text(theme):
         return Colour(0.1, 0.1, 0.1)
     elif theme == 'evening':
         return Colour(0.1, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(0.9, 0.9, 0.9)
     else:
         return Colour(0.2, 0.2, 0.2)
 
@@ -1651,6 +1699,8 @@ def get_sb_folder_text(theme):
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
         return Colour(0.1, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(0.9, 0.9, 0.9)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1661,6 +1711,8 @@ def get_tab_background(theme):
         return Colour(0.6, 0.6, 0.6)
     elif theme == 'evening':
         return Colour(0.34, 0.3, 0.3)
+    elif theme == 'twilight':
+        return Colour(0.05, 0.05, 0.05)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1671,6 +1723,8 @@ def get_tab_active(theme):
         return Colour(0.98, 0.98, 0.82)
     elif theme == 'evening':
         return Colour(0.85, 0.65, 0.3)
+    elif theme == 'twilight':
+        return Colour(0.45, 0.45, 0.45)
     else:
         return Colour(0.85, 0.95, 1.0)
 
@@ -1681,6 +1735,8 @@ def get_tab_inactive(theme):
         return Colour(0.85, 0.85, 0.85)
     elif theme == 'evening':
         return Colour(0.55, 0.55, 0.55)
+    elif theme == 'twilight':
+        return Colour(0.25, 0.25, 0.25)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1691,6 +1747,8 @@ def get_tab_hover(theme):
         return Colour(1.0, 1.0, 0.94)
     elif theme == 'evening':
         return Colour(0.75, 0.65, 0.5)
+    elif theme == 'twilight':
+        return Colour(0.35, 0.35, 0.35)
     else:
         return Colour(0.9, 0.95, 1.0)
 
@@ -1701,6 +1759,8 @@ def get_tab_active_text(theme):
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
         return Colour(0.0, 0.0, 0.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 1.0, 1.0)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1711,6 +1771,8 @@ def get_tab_inactive_text(theme):
         return Colour(0.25, 0.25, 0.25)
     elif theme == 'evening':
         return Colour(0.95, 0.95, 0.95)
+    elif theme == 'twilight':
+        return Colour(0.65, 0.65, 0.65)
     else:
         return Colour(0.25, 0.25, 0.25)
 
@@ -1721,6 +1783,8 @@ def get_tab_hover_text(theme):
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
         return Colour(0.95, 0.95, 0.95)
+    elif theme == 'twilight':
+        return Colour(0.8, 0.8, 0.8)
     else:
         return Colour(0.0, 0.0, 0.0)
 
@@ -1730,6 +1794,8 @@ def get_tab_close(theme):
     elif theme == 'afternoon':
         return Colour(0.6, 0.6, 0.6)
     elif theme == 'evening':
+        return Colour(0.8, 0.8, 0.8)
+    elif theme == 'twilight':
         return Colour(0.8, 0.8, 0.8)
     else:
         return Colour(0.6, 0.6, 0.6)
@@ -1741,6 +1807,8 @@ def get_tab_close_hover(theme):
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'evening':
         return Colour(1.0, 1.0, 1.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 1.0, 1.0)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1751,6 +1819,8 @@ def get_tab_dirty(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -1761,6 +1831,8 @@ def get_fold_closed(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -1771,6 +1843,8 @@ def get_fold_closed_pressed(theme):
         return Colour(0.25, 0.85, 0.25)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.5)
+    elif theme == 'twilight':
+        return Colour(0.8, 1.0, 1.0)
     else:
         return Colour(1.0, 0.75, 0.25)
 
@@ -1781,6 +1855,8 @@ def get_fold_open(theme):
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'evening':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'twilight':
+        return Colour(0.8, 0.8, 0.8)
     else:
         return Colour(0.5, 0.5, 0.5)
 
@@ -1790,6 +1866,8 @@ def get_fold_open_pressed(theme):
     elif theme == 'afternoon':
         return Colour(0.75, 0.75, 0.75)
     elif theme == 'evening':
+        return Colour(1.0, 1.0, 1.0)
+    elif theme == 'twilight':
         return Colour(1.0, 1.0, 1.0)
     else:
         return Colour(0.75, 0.75, 0.75)
@@ -1801,6 +1879,8 @@ def get_scroll_bar_background(theme):
         return Colour(0.78, 0.78, 0.78)
     elif theme == 'evening':
         return Colour(0.35, 0.35, 0.35)
+    elif theme == 'twilight':
+        return Colour(0.2, 0.2, 0.2)
     else:
         return Colour(0.88, 0.88, 0.88)
 
@@ -1811,6 +1891,8 @@ def get_scroll_bar_corner(theme):
         return Colour(0.65, 0.65, 0.65)
     elif theme == 'evening':
         return Colour(0.3, 0.3, 0.3)
+    elif theme == 'twilight':
+        return Colour(0.15, 0.15, 0.15)
     else:
         return Colour(0.7, 0.7, 0.7)
 
@@ -1821,6 +1903,8 @@ def get_scroll_puck(theme):
         return Colour(0.5, 0.5, 0.5)
     elif theme == 'evening':
         return Colour(0.5, 0.5, 0.5)
+    elif theme == 'twilight':
+        return Colour(0.35, 0.35, 0.35)
     else:
         return Colour(0.6, 0.6, 0.6)
 
@@ -1831,6 +1915,8 @@ def get_empty_window(theme):
         return Colour(0.55, 0.55, 0.55)
     elif theme == 'evening':
         return Colour(0.14, 0.11, 0.11)
+    elif theme == 'twilight':
+        return Colour(0.05, 0.0, 0.1)
     else:
         return Colour(0.75, 0.75, 0.75)
 
@@ -1841,6 +1927,8 @@ def get_layout_divider(theme):
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'evening':
         return Colour(0.55, 0.55, 0.55)
+    elif theme == 'twilight':
+        return Colour(0.45, 0.45, 0.45)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1851,6 +1939,8 @@ def get_minimap(theme):
         return Colour(0.2, 0.8, 1.0, 0.16)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.0, 0.16)
+    elif theme == 'twilight':
+        return Colour(0.5, 0.2, 1.0, 0.16)
     else:
         return Colour(1.0, 1.0, 0.0, 0.1)
 
@@ -1861,6 +1951,8 @@ def get_status_bar(theme):
         return Colour(0.35, 0.35, 0.35)
     elif theme == 'evening':
         return Colour(0.25, 0.25, 0.25)
+    elif theme == 'twilight':
+        return Colour(0.1, 0.1, 0.1)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1871,6 +1963,8 @@ def get_status_bar_label(theme):
         return Colour(0.98, 0.98, 0.82)
     elif theme == 'evening':
         return Colour(1.0, 0.8, 0.5)
+    elif theme == 'twilight':
+        return Colour(0.85, 0.6, 1.0)
     else:
         return Colour(0.8, 0.95, 1.0)
 
@@ -1881,6 +1975,8 @@ def get_sidebar_selected(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -1891,6 +1987,8 @@ def get_sidebar_heading(theme):
         return Colour(0.37, 0.37, 0.37)
     elif theme == 'evening':
         return Colour(0.72, 0.72, 0.72)
+    elif theme == 'twilight':
+        return Colour(0.85, 0.85, 0.85)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1901,6 +1999,8 @@ def get_sb_file_text_hover(theme):
         return Colour(0.42, 0.42, 0.42)
     elif theme == 'evening':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.8, 1.0)
     else:
         return Colour(0.5, 0.5, 0.5)
 
@@ -1911,6 +2011,8 @@ def get_sb_file_text_selected(theme):
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'evening':
         return Colour(0.96, 0.96, 0.96)
+    elif theme == 'twilight':
+        return Colour(0.1, 0.1, 0.1)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1921,6 +2023,8 @@ def get_sb_folder_icon(theme):
         return Colour(0.42, 0.42, 0.42)
     elif theme == 'evening':
         return Colour(0.55, 0.55, 0.55)
+    elif theme == 'twilight':
+        return Colour(0.2, 0.4, 0.6)
     else:
         return Colour(0.42, 0.42, 0.42)
 
@@ -1931,6 +2035,8 @@ def get_sb_folder_icon_hover(theme):
         return Colour(0.7, 0.7, 0.7)
     elif theme == 'evening':
         return Colour(0.65, 0.65, 0.65)
+    elif theme == 'twilight':
+        return Colour(0.4, 0.6, 0.8)
     else:
         return Colour(0.7, 0.7, 0.7)
 
@@ -1941,6 +2047,8 @@ def get_sb_folder_icon_selected(theme):
         return Colour(1.0, 1.0, 1.0)
     elif theme == 'evening':
         return Colour(0.96, 0.96, 0.96)
+    elif theme == 'twilight':
+        return Colour(0.6, 0.8, 1.0)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1951,6 +2059,8 @@ def get_large_button(theme):
         return Colour(0.3, 0.3, 0.3)
     elif theme == 'evening':
         return Colour(0.25, 0.25, 0.25)
+    elif theme == 'twilight':
+        return Colour(0.14, 0.14, 0.14)
     else:
         return Colour(0.4, 0.4, 0.4)
 
@@ -1961,6 +2071,8 @@ def get_large_button_pressed(theme):
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'evening':
         return Colour(0.35, 0.35, 0.35)
+    elif theme == 'twilight':
+        return Colour(0.24, 0.24, 0.24)
     else:
         return Colour(0.5, 0.5, 0.5)
 
@@ -1971,6 +2083,8 @@ def get_large_button_text(theme):
         return Colour(0.9, 0.9, 0.9)
     elif theme == 'evening':
         return Colour(0.8, 0.8, 0.8)
+    elif theme == 'twilight':
+        return Colour(0.7, 0.7, 0.7)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -1981,6 +2095,8 @@ def get_panel_background(theme):
         return Colour(0.55, 0.55, 0.55)
     elif theme == 'evening':
         return Colour(0.43, 0.43, 0.43)
+    elif theme == 'twilight':
+        return Colour(0.3, 0.3, 0.3)
     else:
         return Colour(0.65, 0.65, 0.65)
 
@@ -1990,6 +2106,8 @@ def get_quick_panel_background(theme):
     elif theme == 'afternoon':
         return Colour(0.25, 0.25, 0.25)
     elif theme == 'evening':
+        return Colour(0.2, 0.2, 0.2)
+    elif theme == 'twilight':
         return Colour(0.2, 0.2, 0.2)
     else:
         return Colour(0.3, 0.3, 0.3)
@@ -2001,6 +2119,8 @@ def get_qp_row(theme):
         return Colour(0.45, 0.45, 0.45)
     elif theme == 'evening':
         return Colour(0.35, 0.35, 0.35)
+    elif theme == 'twilight':
+        return Colour(0.35, 0.35, 0.35)
     else:
         return Colour(0.55, 0.55, 0.55)
 
@@ -2011,6 +2131,8 @@ def get_qp_row_selected(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -2020,6 +2142,8 @@ def get_qp_text(theme):
     elif theme == 'afternoon':
         return Colour(0.95, 0.95, 0.95)
     elif theme == 'evening':
+        return Colour(0.85, 0.85, 0.85)
+    elif theme == 'twilight':
         return Colour(0.85, 0.85, 0.85)
     else:
         return Colour(1.0, 1.0, 1.0)
@@ -2031,6 +2155,8 @@ def get_qp_text_match(theme):
         return AFTERNOON_BG
     elif theme == 'evening':
         return Colour(1.0, 0.6, 0.8)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.4, 0.4)
     else:
         return MIDDAY_BG
 
@@ -2040,6 +2166,8 @@ def get_qp_text_selected(theme):
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
+        return Colour(0.0, 0.0, 0.0)
+    elif theme == 'twilight':
         return Colour(0.0, 0.0, 0.0)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -2051,6 +2179,8 @@ def get_qp_text_match_selected(theme):
         return AFTERNOON_BG
     elif theme == 'evening':
         return Colour(1.0, 0.6, 0.8)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.4, 0.4)
     else:
         return MIDDAY_BG
 
@@ -2061,6 +2191,8 @@ def get_qp_text_score(theme):
         return Colour(0.85, 0.95, 1.0)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.25)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.7, 1.0)
     else:
         return Colour(1.0, 1.0, 0.0)
 
@@ -2071,6 +2203,8 @@ def get_qp_text_score_selected(theme):
         return Colour(0.85, 0.95, 1.0)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.0)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.2, 1.0)
     else:
         return Colour(1.0, 1.0, 0.0)
 
@@ -2080,6 +2214,8 @@ def get_ac_background(theme):
     elif theme == 'afternoon':
         return Colour(0.4, 0.4, 0.4)
     elif theme == 'evening':
+        return Colour(0.25, 0.25, 0.25)
+    elif theme == 'twilight':
         return Colour(0.25, 0.25, 0.25)
     else:
         return Colour(0.45, 0.45, 0.45)
@@ -2091,6 +2227,8 @@ def get_ac_text(theme):
         return Colour(0.95, 0.95, 0.95)
     elif theme == 'evening':
         return Colour(0.92, 0.92, 0.92)
+    elif theme == 'twilight':
+        return Colour(0.92, 0.92, 0.92)
     else:
         return Colour(1.0, 1.0, 1.0)
 
@@ -2101,6 +2239,8 @@ def get_ac_text_match(theme):
         return AFTERNOON_BG
     elif theme == 'evening':
         return Colour(1.0, 0.6, 0.8)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.4, 0.4)
     else:
         return MIDDAY_BG
 
@@ -2110,6 +2250,8 @@ def get_ac_text_selected(theme):
     elif theme == 'afternoon':
         return Colour(0.0, 0.0, 0.0)
     elif theme == 'evening':
+        return Colour(0.1, 0.1, 0.1)
+    elif theme == 'twilight':
         return Colour(0.1, 0.1, 0.1)
     else:
         return Colour(0.0, 0.0, 0.0)
@@ -2121,6 +2263,8 @@ def get_ac_text_match_selected(theme):
         return AFTERNOON_BG
     elif theme == 'evening':
         return Colour(1.0, 0.6, 0.8)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.4, 0.4)
     else:
         return MIDDAY_BG
 
@@ -2131,6 +2275,8 @@ def get_ac_row_selected(theme):
         return AFTERNOON_ACCENT
     elif theme == 'evening':
         return EVENING_ACCENT
+    elif theme == 'twilight':
+        return TWILIGHT_ACCENT
     else:
         return MIDDAY_ACCENT
 
@@ -2141,6 +2287,8 @@ def get_icon_button_off(theme):
         return Colour(0.7, 0.7, 0.7)
     elif theme == 'evening':
         return Colour(0.7, 0.7, 0.7)
+    elif theme == 'twilight':
+        return Colour(0.6, 0.6, 0.6)
     else:
         return Colour(0.75, 0.75, 0.75)
 
@@ -2151,6 +2299,8 @@ def get_icon_button_on(theme):
         return Colour(0.65, 0.85, 1.0)
     elif theme == 'evening':
         return Colour(1.0, 0.5, 0.25)
+    elif theme == 'twilight':
+        return Colour(1.0, 0.7, 1.0)
     else:
         return Colour(0.9, 0.9, 0.0)
 
