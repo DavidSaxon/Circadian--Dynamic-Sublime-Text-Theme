@@ -1349,8 +1349,7 @@ THEMES = {
     9:  'midday',
     16: 'afternoon',
     18: 'evening',
-    20: 'twilight',
-    22: 'night'
+    21: 'twilight',
 }
 
 #-------------------------------------------------------------------------------
@@ -1362,7 +1361,7 @@ import datetime
 
 def lerp_time(func):
     # t = datetime.datetime.now().hour % 24
-    t = 20
+    t = 2
     t1 = (t + 1) % 24
     # find current theme
     t0 = t
@@ -1395,18 +1394,21 @@ def lerp_time(func):
 #                                   BASE COLOURS
 #-------------------------------------------------------------------------------
 
+#-----------------------------------GRAVESHIFT----------------------------------
+GRAVESHIFT_BG     = Colour(0.0, 0.0, 0.0)
+GRAVESHIFT_ACCENT = Colour(0.0, 1.0, 1.0)
 #-------------------------------------MIDDAY------------------------------------
-MIDDAY_BG        = Colour(0.78, 0.95, 1.0)
-MIDDAY_ACCENT    = Colour(1.0, 0.5, 0.0)
+MIDDAY_BG         = Colour(0.78, 0.95, 1.0)
+MIDDAY_ACCENT     = Colour(1.0, 0.5, 0.0)
 #-----------------------------------AFTERNOON-----------------------------------
-AFTERNOON_BG     = Colour(0.98, 0.98, 0.82)
-AFTERNOON_ACCENT = Colour(0.0, 0.65, 0.0)
+AFTERNOON_BG      = Colour(0.98, 0.98, 0.82)
+AFTERNOON_ACCENT  = Colour(0.0, 0.65, 0.0)
 #------------------------------------EVENING------------------------------------
-EVENING_BG       = Colour(0.16, 0.14, 0.14)
-EVENING_ACCENT   = Colour(1.0, 0.2, 0.2)
+EVENING_BG        = Colour(0.16, 0.14, 0.14)
+EVENING_ACCENT    = Colour(1.0, 0.2, 0.2)
 #------------------------------------TWILIGHT-----------------------------------
-TWILIGHT_BG      = Colour(0.11, 0.11, 0.11)
-TWILIGHT_ACCENT  = Colour(0.6, 0.8, 1.0)
+TWILIGHT_BG       = Colour(0.11, 0.11, 0.11)
+TWILIGHT_ACCENT   = Colour(0.6, 0.8, 1.0)
 
 #-------------------------------------------------------------------------------
 #                                 COLOUR FUNCTIONS
@@ -1424,7 +1426,7 @@ def get_background(theme):
     elif theme == 'twilight':
         return TWILIGHT_BG
     else:
-        return MIDDAY_BG
+        return GRAVESHIFT_BG
 
 def get_caret(theme):
     if theme == "midday":
@@ -1436,7 +1438,7 @@ def get_caret(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_text(theme):
     if theme == "midday":
@@ -1448,7 +1450,7 @@ def get_text(theme):
     elif theme == 'twilight':
         return Colour(0.95, 0.95, 0.95)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_line_highlight(theme):
     if theme == "midday":
@@ -1460,7 +1462,7 @@ def get_line_highlight(theme):
     elif theme == 'twilight':
         return Colour(0.2, 0.4, 0.6)
     else:
-        return Colour(1.0, 1.0, 0.7)
+        return Colour(0.0, 0.0, 0.5)
 
 def get_selection(theme):
     if theme == "midday":
@@ -1472,7 +1474,7 @@ def get_selection(theme):
     elif theme == 'twilight':
         return Colour(0.5, 0.8, 1.0, 0.6)
     else:
-        return Colour(1.0, 1.0, 0.0, 0.9)
+        return Colour(0.7, 0.7, 0.7, 0.3)
 
 def get_inactive_selection(theme):
     if theme == "midday":
@@ -1484,7 +1486,7 @@ def get_inactive_selection(theme):
     elif theme == 'twilight':
         return Colour(0.5, 0.8, 1.0, 0.2)
     else:
-        return Colour(1.0, 1.0, 0.0, 0.2)
+        return Colour(0.7, 0.7, 0.7, 0.2)
 
 def get_find_highlight(theme):
     if theme == "midday":
@@ -1496,7 +1498,7 @@ def get_find_highlight(theme):
     elif theme == 'twilight':
         return Colour(0.8, 0.5, 1.0)
     else:
-        return Colour(1.0, 0.5, 0.0)
+        return Colour(0.0, 0.7, 1.0)
 
 def get_line_numbers(theme):
     if theme == "midday":
@@ -1508,7 +1510,7 @@ def get_line_numbers(theme):
     elif theme == 'twilight':
         return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.0, 0.5, 0.0)
 
 def get_guide(theme):
     if theme == "midday":
@@ -1520,7 +1522,7 @@ def get_guide(theme):
     elif theme == 'twilight':
         return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.0, 0.5, 0.0)
 
 def get_comment(theme):
     if theme == "midday":
@@ -1532,7 +1534,7 @@ def get_comment(theme):
     elif theme == 'twilight':
         return Colour(0.6, 0.5, 0.7)
     else:
-        return Colour(0.5, 0.5, 0.5)
+        return Colour(0.0, 0.4, 0.0)
 
 def get_literal(theme):
     if theme == "midday":
@@ -1544,7 +1546,7 @@ def get_literal(theme):
     elif theme == 'twilight':
         return Colour(0.6, 0.8, 1.0)
     else:
-        return Colour(1.0, 0.05, 0.05)
+        return Colour(1.0, 1.0, 0.0)
 
 def get_string_literal(theme):
     if theme == "midday":
@@ -1556,7 +1558,7 @@ def get_string_literal(theme):
     elif theme == 'twilight':
         return Colour(0.4, 0.6, 1.0)
     else:
-        return Colour(0.0, 0.35, 0.0)
+        return Colour(0.0, 1.0, 1.0)
 
 def get_keyword(theme):
     if theme == "midday":
@@ -1568,7 +1570,7 @@ def get_keyword(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.6, 1.0)
     else:
-        return Colour(0.5, 0.0, 0.5)
+        return Colour(0.2, 0.3, 1.0)
 
 def get_entity_name(theme):
     if theme == "midday":
@@ -1580,7 +1582,7 @@ def get_entity_name(theme):
     elif theme == 'twilight':
         return Colour(0.7, 0.0, 1.0)
     else:
-        return Colour(0.3, 0.0, 1.0)
+        return Colour(0.6, 0.1, 1.0)
 
 def get_modifier(theme):
     if theme == "midday":
@@ -1592,7 +1594,7 @@ def get_modifier(theme):
     elif theme == 'twilight':
         return Colour(0.2, 0.8, 1.0)
     else:
-        return Colour(0.8, 0.5, 0.0)
+        return Colour(0.3, 1.0, 1.0)
 
 def get_variable(theme):
     if theme == "midday":
@@ -1604,7 +1606,7 @@ def get_variable(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.4, 0.5)
     else:
-        return Colour(0.0, 0.3, 0.2)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_builtin_func(theme):
     if theme == "midday":
@@ -1616,7 +1618,7 @@ def get_builtin_func(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.2, 0.2)
     else:
-        return Colour(0.5, 0.0, 0.5)
+        return Colour(1.0, 0.6, 0.1)
 
 def get_invalid_background(theme):
     if theme == "midday":
@@ -1652,7 +1654,7 @@ def get_include_background(theme):
     elif theme == 'twilight':
         return Colour(0.4, 0.1, 0.1)
     else:
-        return Colour(0.4, 0.4, 0.4, 0.4)
+        return Colour(0.0, 0.0, 0.0, 0.0)
 
 def get_include_text(theme):
     if theme == "midday":
@@ -1664,7 +1666,7 @@ def get_include_text(theme):
     elif theme == 'twilight':
         return Colour(0.9, 0.9, 0.9)
     else:
-        return Colour(0.0, 0.1, 1.0)
+        return Colour(0.0, 1.0, 1.0)
 
 #-----------------------------------UI COLOURS----------------------------------
 
@@ -1678,7 +1680,7 @@ def get_sidebar(theme):
     elif theme == 'twilight':
         return Colour(0.15, 0.15, 0.15)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_sb_file_text(theme):
     if theme == "midday":
@@ -1690,7 +1692,7 @@ def get_sb_file_text(theme):
     elif theme == 'twilight':
         return Colour(0.9, 0.9, 0.9)
     else:
-        return Colour(0.2, 0.2, 0.2)
+        return Colour(0.0, 0.8, 0.0)
 
 def get_sb_folder_text(theme):
     if theme == "midday":
@@ -1702,7 +1704,7 @@ def get_sb_folder_text(theme):
     elif theme == 'twilight':
         return Colour(0.9, 0.9, 0.9)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(0.0, 0.8, 0.0)
 
 def get_tab_background(theme):
     if theme == "midday":
@@ -1714,7 +1716,7 @@ def get_tab_background(theme):
     elif theme == 'twilight':
         return Colour(0.05, 0.05, 0.05)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_tab_active(theme):
     if theme == "midday":
@@ -1726,7 +1728,7 @@ def get_tab_active(theme):
     elif theme == 'twilight':
         return Colour(0.45, 0.45, 0.45)
     else:
-        return Colour(0.85, 0.95, 1.0)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_tab_inactive(theme):
     if theme == "midday":
@@ -1738,7 +1740,7 @@ def get_tab_inactive(theme):
     elif theme == 'twilight':
         return Colour(0.25, 0.25, 0.25)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.2, 0.2, 0.2)
 
 def get_tab_hover(theme):
     if theme == "midday":
@@ -1750,7 +1752,7 @@ def get_tab_hover(theme):
     elif theme == 'twilight':
         return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.9, 0.95, 1.0)
+        return Colour(0.3, 0.3, 0.3)
 
 def get_tab_active_text(theme):
     if theme == "midday":
@@ -1774,7 +1776,7 @@ def get_tab_inactive_text(theme):
     elif theme == 'twilight':
         return Colour(0.65, 0.65, 0.65)
     else:
-        return Colour(0.25, 0.25, 0.25)
+        return Colour(0.8, 0.8, 0.8)
 
 def get_tab_hover_text(theme):
     if theme == "midday":
@@ -1786,7 +1788,7 @@ def get_tab_hover_text(theme):
     elif theme == 'twilight':
         return Colour(0.8, 0.8, 0.8)
     else:
-        return Colour(0.0, 0.0, 0.0)
+        return Colour(1.0, 1.0, 1.0)
 
 def get_tab_close(theme):
     if theme == "midday":
@@ -1822,7 +1824,7 @@ def get_tab_dirty(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_fold_closed(theme):
     if theme == "midday":
@@ -1834,7 +1836,7 @@ def get_fold_closed(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_fold_closed_pressed(theme):
     if theme == "midday":
@@ -1846,7 +1848,7 @@ def get_fold_closed_pressed(theme):
     elif theme == 'twilight':
         return Colour(0.8, 1.0, 1.0)
     else:
-        return Colour(1.0, 0.75, 0.25)
+        return Colour(0.7, 0.7, 0.7)
 
 def get_fold_open(theme):
     if theme == "midday":
@@ -1858,7 +1860,7 @@ def get_fold_open(theme):
     elif theme == 'twilight':
         return Colour(0.8, 0.8, 0.8)
     else:
-        return Colour(0.5, 0.5, 0.5)
+        return Colour(0.0, 0.7, 0.0)
 
 def get_fold_open_pressed(theme):
     if theme == "midday":
@@ -1870,7 +1872,7 @@ def get_fold_open_pressed(theme):
     elif theme == 'twilight':
         return Colour(1.0, 1.0, 1.0)
     else:
-        return Colour(0.75, 0.75, 0.75)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_scroll_bar_background(theme):
     if theme == "midday":
@@ -1882,7 +1884,7 @@ def get_scroll_bar_background(theme):
     elif theme == 'twilight':
         return Colour(0.2, 0.2, 0.2)
     else:
-        return Colour(0.88, 0.88, 0.88)
+        return Colour(0.15, 0.15, 0.15)
 
 def get_scroll_bar_corner(theme):
     if theme == "midday":
@@ -1894,7 +1896,7 @@ def get_scroll_bar_corner(theme):
     elif theme == 'twilight':
         return Colour(0.15, 0.15, 0.15)
     else:
-        return Colour(0.7, 0.7, 0.7)
+        return Colour(0.075, 0.075, 0.075)
 
 def get_scroll_puck(theme):
     if theme == "midday":
@@ -1906,7 +1908,7 @@ def get_scroll_puck(theme):
     elif theme == 'twilight':
         return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.6, 0.6, 0.6)
+        return Colour(0.3, 0.3, 0.3)
 
 def get_empty_window(theme):
     if theme == "midday":
@@ -1918,7 +1920,7 @@ def get_empty_window(theme):
     elif theme == 'twilight':
         return Colour(0.05, 0.0, 0.1)
     else:
-        return Colour(0.75, 0.75, 0.75)
+        return Colour(0.0, 0.1, 0.0)
 
 def get_layout_divider(theme):
     if theme == "midday":
@@ -1930,7 +1932,7 @@ def get_layout_divider(theme):
     elif theme == 'twilight':
         return Colour(0.45, 0.45, 0.45)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_minimap(theme):
     if theme == "midday":
@@ -1942,7 +1944,7 @@ def get_minimap(theme):
     elif theme == 'twilight':
         return Colour(0.5, 0.2, 1.0, 0.16)
     else:
-        return Colour(1.0, 1.0, 0.0, 0.1)
+        return Colour(0.0, 1.0, 1.0, 0.18)
 
 def get_status_bar(theme):
     if theme == "midday":
@@ -1954,7 +1956,7 @@ def get_status_bar(theme):
     elif theme == 'twilight':
         return Colour(0.1, 0.1, 0.1)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_status_bar_label(theme):
     if theme == "midday":
@@ -1966,7 +1968,7 @@ def get_status_bar_label(theme):
     elif theme == 'twilight':
         return Colour(0.85, 0.6, 1.0)
     else:
-        return Colour(0.8, 0.95, 1.0)
+        return Colour(0.0, 0.7, 0.0)
 
 def get_sidebar_selected(theme):
     if theme == "midday":
@@ -1978,7 +1980,7 @@ def get_sidebar_selected(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_sidebar_heading(theme):
     if theme == "midday":
@@ -1990,7 +1992,7 @@ def get_sidebar_heading(theme):
     elif theme == 'twilight':
         return Colour(0.85, 0.85, 0.85)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_sb_file_text_hover(theme):
     if theme == "midday":
@@ -2002,7 +2004,7 @@ def get_sb_file_text_hover(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.8, 1.0)
     else:
-        return Colour(0.5, 0.5, 0.5)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_sb_file_text_selected(theme):
     if theme == "midday":
@@ -2014,7 +2016,7 @@ def get_sb_file_text_selected(theme):
     elif theme == 'twilight':
         return Colour(0.1, 0.1, 0.1)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_sb_folder_icon(theme):
     if theme == "midday":
@@ -2026,7 +2028,7 @@ def get_sb_folder_icon(theme):
     elif theme == 'twilight':
         return Colour(0.2, 0.4, 0.6)
     else:
-        return Colour(0.42, 0.42, 0.42)
+        return Colour(0.0, 0.7, 0.7)
 
 def get_sb_folder_icon_hover(theme):
     if theme == "midday":
@@ -2038,7 +2040,7 @@ def get_sb_folder_icon_hover(theme):
     elif theme == 'twilight':
         return Colour(0.4, 0.6, 0.8)
     else:
-        return Colour(0.7, 0.7, 0.7)
+        return Colour(0.0, 1.0, 1.0)
 
 def get_sb_folder_icon_selected(theme):
     if theme == "midday":
@@ -2050,7 +2052,7 @@ def get_sb_folder_icon_selected(theme):
     elif theme == 'twilight':
         return Colour(0.6, 0.8, 1.0)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 1.0, 1.0)
 
 def get_large_button(theme):
     if theme == "midday":
@@ -2062,7 +2064,7 @@ def get_large_button(theme):
     elif theme == 'twilight':
         return Colour(0.14, 0.14, 0.14)
     else:
-        return Colour(0.4, 0.4, 0.4)
+        return Colour(0.0, 0.0, 0.0)
 
 def get_large_button_pressed(theme):
     if theme == "midday":
@@ -2074,7 +2076,7 @@ def get_large_button_pressed(theme):
     elif theme == 'twilight':
         return Colour(0.24, 0.24, 0.24)
     else:
-        return Colour(0.5, 0.5, 0.5)
+        return Colour(0.2, 0.2, 0.2)
 
 def get_large_button_text(theme):
     if theme == "midday":
@@ -2086,7 +2088,7 @@ def get_large_button_text(theme):
     elif theme == 'twilight':
         return Colour(0.7, 0.7, 0.7)
     else:
-        return Colour(1.0, 1.0, 1.0)
+        return Colour(0.0, 1.0, 1.0)
 
 def get_panel_background(theme):
     if theme == "midday":
@@ -2098,7 +2100,7 @@ def get_panel_background(theme):
     elif theme == 'twilight':
         return Colour(0.3, 0.3, 0.3)
     else:
-        return Colour(0.65, 0.65, 0.65)
+        return Colour(0.15, 0.15, 0.15)
 
 def get_quick_panel_background(theme):
     if theme == "midday":
@@ -2110,7 +2112,7 @@ def get_quick_panel_background(theme):
     elif theme == 'twilight':
         return Colour(0.2, 0.2, 0.2)
     else:
-        return Colour(0.3, 0.3, 0.3)
+        return Colour(0.1, 0.1, 0.1)
 
 def get_qp_row(theme):
     if theme == "midday":
@@ -2122,7 +2124,7 @@ def get_qp_row(theme):
     elif theme == 'twilight':
         return Colour(0.35, 0.35, 0.35)
     else:
-        return Colour(0.55, 0.55, 0.55)
+        return Colour(0.2, 0.2, 0.2)
 
 def get_qp_row_selected(theme):
     if theme == "midday":
@@ -2134,7 +2136,7 @@ def get_qp_row_selected(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_qp_text(theme):
     if theme == "midday":
@@ -2158,7 +2160,7 @@ def get_qp_text_match(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.4, 0.4)
     else:
-        return MIDDAY_BG
+        return Colour(1.0, 0.0, 0.0)
 
 def get_qp_text_selected(theme):
     if theme == "midday":
@@ -2182,7 +2184,7 @@ def get_qp_text_match_selected(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.4, 0.4)
     else:
-        return MIDDAY_BG
+        return Colour(1.0, 0.0, 0.0)
 
 def get_qp_text_score(theme):
     if theme == "midday":
@@ -2194,7 +2196,7 @@ def get_qp_text_score(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.7, 1.0)
     else:
-        return Colour(1.0, 1.0, 0.0)
+        return Colour(0.0, 1.0, 0.0)
 
 def get_qp_text_score_selected(theme):
     if theme == "midday":
@@ -2206,7 +2208,7 @@ def get_qp_text_score_selected(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.2, 1.0)
     else:
-        return Colour(1.0, 1.0, 0.0)
+        return Colour(0.0, 0.4, 0.0)
 
 def get_ac_background(theme):
     if theme == "midday":
@@ -2218,7 +2220,7 @@ def get_ac_background(theme):
     elif theme == 'twilight':
         return Colour(0.25, 0.25, 0.25)
     else:
-        return Colour(0.45, 0.45, 0.45)
+        return Colour(0.15, 0.15, 0.15)
 
 def get_ac_text(theme):
     if theme == "midday":
@@ -2242,7 +2244,7 @@ def get_ac_text_match(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.4, 0.4)
     else:
-        return MIDDAY_BG
+        return Colour(1.0, 0.0, 0.0)
 
 def get_ac_text_selected(theme):
     if theme == "midday":
@@ -2266,7 +2268,7 @@ def get_ac_text_match_selected(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.4, 0.4)
     else:
-        return MIDDAY_BG
+        return Colour(1.0, 0.0, 0.0)
 
 def get_ac_row_selected(theme):
     if theme == "midday":
@@ -2278,7 +2280,7 @@ def get_ac_row_selected(theme):
     elif theme == 'twilight':
         return TWILIGHT_ACCENT
     else:
-        return MIDDAY_ACCENT
+        return GRAVESHIFT_ACCENT
 
 def get_icon_button_off(theme):
     if theme == "midday":
@@ -2290,7 +2292,7 @@ def get_icon_button_off(theme):
     elif theme == 'twilight':
         return Colour(0.6, 0.6, 0.6)
     else:
-        return Colour(0.75, 0.75, 0.75)
+        return Colour(0.5, 0.5, 0.5)
 
 def get_icon_button_on(theme):
     if theme == "midday":
@@ -2302,7 +2304,7 @@ def get_icon_button_on(theme):
     elif theme == 'twilight':
         return Colour(1.0, 0.7, 1.0)
     else:
-        return Colour(0.9, 0.9, 0.0)
+        return GRAVESHIFT_ACCENT
 
 #-------------------------------------------------------------------------------
 #                             APPLY COLOURS AND WRITE
