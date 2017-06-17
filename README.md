@@ -32,12 +32,12 @@ directory.
 In Sublime Text's user settings add the following field and value:
 
 ```
-"theme": "Hacker Nights.sublime-theme"
+"theme": "Circadian.sublime-theme"
 ```
 
 ### Applying the Colour Scheme
 
-Select ```Preferences -> Color Scheme -> Theme-Hacker Nights -> Hacker Nights```
+Select ```Preferences -> Color Scheme -> Theme-Circadian -> Circadian```
 from the menu.
 
 OR:
@@ -45,7 +45,7 @@ OR:
 In Sublime Text's user settings add the following field and value:
 
 ```
-"color_scheme": "Packages/Theme - Hacker Nights/Hacker Nights.tmTheme"
+"color_scheme": "Packages/Theme - Circadian/Circadian.tmTheme"
 ```
 
 ### Running the dynamic script
