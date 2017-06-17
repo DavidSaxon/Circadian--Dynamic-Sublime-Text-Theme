@@ -1359,8 +1359,7 @@ THEMES = {
 import datetime
 
 def get_theme():
-    # t = datetime.datetime.now().hour % 24
-    t = 2
+    t = datetime.datetime.now().hour % 24
     while True:
         if t in THEMES:
             return THEMES[t]
