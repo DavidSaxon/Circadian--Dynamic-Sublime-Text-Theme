@@ -4,7 +4,7 @@
 A colour scheme and UI theme for Sublime Text 2 that changes throughout the day.
 
 #### 6am Dawn
-![](http://imgur.com/a/y45Kv)
+![](http://i.imgur.com/P2KmhQF.png)
 
 ### Installing
 
