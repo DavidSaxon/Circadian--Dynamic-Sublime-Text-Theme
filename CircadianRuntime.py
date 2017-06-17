@@ -1358,36 +1358,48 @@ THEMES = {
 
 import datetime
 
-
-def lerp_time(func):
+def get_theme():
     t = datetime.datetime.now().hour % 24
-    t1 = (t + 1) % 24
-    # find current theme
-    t0 = t
-    theme_1 = ''
-    while not theme_1:
-        if t0 in THEMES:
-            theme_1 = THEMES[t0]
+    while True:
+        if t in THEMES:
+            return THEMES[t]
         else:
-            t0 = (t0 - 1) % 24
-    # lerp?
-    theme_2 = ''
-    lerp = 0.0
-    if t1 in THEMES:
-        theme_2 = THEMES[t1]
-        lerp = datetime.datetime.now().minute / 60.0
-    # don't use lerp
-    if not theme_2:
-        return func(theme_1)
-    # lerp me up
-    colour_1 = func(theme_1)
-    colour_2 = func(theme_2)
-    return Colour(
-        (colour_1.r * (1.0 - lerp)) + (colour_2.r * lerp),
-        (colour_1.g * (1.0 - lerp)) + (colour_2.g * lerp),
-        (colour_1.b * (1.0 - lerp)) + (colour_2.b * lerp),
-        (colour_1.a * (1.0 - lerp)) + (colour_2.a * lerp)
-    )
+            t = (t - 1) % 24
+    return ''
+
+def no_lerp(func):
+    return func(get_theme())
+
+
+# def lerp_time(func):
+#     t = datetime.datetime.now().hour % 24
+#     t1 = (t + 1) % 24
+#     # find current theme
+#     t0 = t
+#     theme_1 = ''
+#     while not theme_1:
+#         if t0 in THEMES:
+#             theme_1 = THEMES[t0]
+#         else:
+#             t0 = (t0 - 1) % 24
+#     # lerp?
+#     theme_2 = ''
+#     lerp = 0.0
+#     if t1 in THEMES:
+#         theme_2 = THEMES[t1]
+#         lerp = datetime.datetime.now().minute / 60.0
+#     # don't use lerp
+#     if not theme_2:
+#         return func(theme_1)
+#     # lerp me up
+#     colour_1 = func(theme_1)
+#     colour_2 = func(theme_2)
+#     return Colour(
+#         (colour_1.r * (1.0 - lerp)) + (colour_2.r * lerp),
+#         (colour_1.g * (1.0 - lerp)) + (colour_2.g * lerp),
+#         (colour_1.b * (1.0 - lerp)) + (colour_2.b * lerp),
+#         (colour_1.a * (1.0 - lerp)) + (colour_2.a * lerp)
+#     )
 
 #-------------------------------------------------------------------------------
 #                                   BASE COLOURS
@@ -1403,7 +1415,7 @@ DAWN_ACCENT       = Colour(0.85, 0.0, 0.0)
 MIDDAY_BG         = Colour(0.78, 0.95, 1.0)
 MIDDAY_ACCENT     = Colour(1.0, 0.5, 0.0)
 #-----------------------------------AFTERNOON-----------------------------------
-AFTERNOON_BG      = Colour(0.98, 0.98, 0.82)
+AFTERNOON_BG      = Colour(0.9, 0.9, 0.88)
 AFTERNOON_ACCENT  = Colour(0.0, 0.65, 0.0)
 #------------------------------------EVENING------------------------------------
 EVENING_BG        = Colour(0.16, 0.14, 0.14)
@@ -2472,90 +2484,100 @@ TEXT_THEME_PATH = os.path.join(THEME_DIRECTORY, 'Circadian.tmTheme')
 # the file path where the UI theme file lives
 UI_THEME_PATH = os.path.join(THEME_DIRECTORY, 'Circadian.sublime-theme')
 
+last_theme = ''
 while(True):
+
+    # has anything changed?
+    t = get_theme()
+    if t == last_theme:
+        # sleep a minute before checking again
+        time.sleep(60)
+        continue
+    last_theme = t
 
     # write the text theme
     with open(TEXT_THEME_PATH, 'w') as f:
         f.write(TEXT_THEME_DATA.format(
-            background=lerp_time(get_background).to_hex(),
-            caret=lerp_time(get_caret).to_hex(),
-            text=lerp_time(get_text).to_hex(),
-            line_highlight=lerp_time(get_line_highlight).to_hex(),
-            selection=lerp_time(get_selection).to_hex(),
-            inactive_selection=lerp_time(get_inactive_selection).to_hex(),
-            find_highlight=lerp_time(get_find_highlight).to_hex(),
-            line_numbers=lerp_time(get_line_numbers).to_hex(),
-            guide=lerp_time(get_guide).to_hex(),
-            comment=lerp_time(get_comment).to_hex(),
-            literal=lerp_time(get_literal).to_hex(),
-            string_literal=lerp_time(get_string_literal).to_hex(),
-            keyword=lerp_time(get_keyword).to_hex(),
-            entity_name=lerp_time(get_entity_name).to_hex(),
-            modifier=lerp_time(get_modifier).to_hex(),
-            variable=lerp_time(get_variable).to_hex(),
-            builtin_func=lerp_time(get_builtin_func).to_hex(),
-            invalid_background=lerp_time(get_invalid_background).to_hex(),
-            invalid_text=lerp_time(get_invalid_text).to_hex(),
-            include_background=lerp_time(get_include_background).to_hex(),
-            include_text=lerp_time(get_include_text).to_hex()
+            background=no_lerp(get_background).to_hex(),
+            caret=no_lerp(get_caret).to_hex(),
+            text=no_lerp(get_text).to_hex(),
+            line_highlight=no_lerp(get_line_highlight).to_hex(),
+            selection=no_lerp(get_selection).to_hex(),
+            inactive_selection=no_lerp(get_inactive_selection).to_hex(),
+            find_highlight=no_lerp(get_find_highlight).to_hex(),
+            line_numbers=no_lerp(get_line_numbers).to_hex(),
+            guide=no_lerp(get_guide).to_hex(),
+            comment=no_lerp(get_comment).to_hex(),
+            literal=no_lerp(get_literal).to_hex(),
+            string_literal=no_lerp(get_string_literal).to_hex(),
+            keyword=no_lerp(get_keyword).to_hex(),
+            entity_name=no_lerp(get_entity_name).to_hex(),
+            modifier=no_lerp(get_modifier).to_hex(),
+            variable=no_lerp(get_variable).to_hex(),
+            builtin_func=no_lerp(get_builtin_func).to_hex(),
+            invalid_background=no_lerp(get_invalid_background).to_hex(),
+            invalid_text=no_lerp(get_invalid_text).to_hex(),
+            include_background=no_lerp(get_include_background).to_hex(),
+            include_text=no_lerp(get_include_text).to_hex()
         ))
 
     # write the ui theme
     with open(UI_THEME_PATH, 'w') as f:
         f.write(UI_THEME_DATA.format(
-            sidebar=lerp_time(get_sidebar).to_tuple(),
-            sb_file_text=lerp_time(get_sb_file_text).to_tuple(),
-            sb_folder_text=lerp_time(get_sb_folder_text).to_tuple(),
-            tab_background=lerp_time(get_tab_background).to_tuple(),
-            tab_active=lerp_time(get_tab_active).to_tuple(),
-            tab_inactive=lerp_time(get_tab_inactive).to_tuple(),
-            tab_hover=lerp_time(get_tab_hover).to_tuple(),
-            tab_active_text=lerp_time(get_tab_active_text).to_tuple(),
-            tab_inactive_text=lerp_time(get_tab_inactive_text).to_tuple(),
-            tab_hover_text=lerp_time(get_tab_hover_text).to_tuple(),
-            tab_close=lerp_time(get_tab_close).to_tuple(),
-            tab_close_hover=lerp_time(get_tab_close_hover).to_tuple(),
-            tab_dirty=lerp_time(get_tab_dirty).to_tuple(),
-            fold_closed=lerp_time(get_fold_closed).to_tuple(),
-            fold_closed_pressed=lerp_time(get_fold_closed_pressed).to_tuple(),
-            fold_open=lerp_time(get_fold_open).to_tuple(),
-            fold_open_pressed=lerp_time(get_fold_open_pressed).to_tuple(),
-            scroll_bar_background=lerp_time(get_scroll_bar_background).to_tuple(),
-            scroll_bar_corner=lerp_time(get_scroll_bar_corner).to_tuple(),
-            scroll_puck=lerp_time(get_scroll_puck).to_tuple(),
-            empty_window=lerp_time(get_empty_window).to_tuple(),
-            layout_divider=lerp_time(get_layout_divider).to_tuple(),
-            minimap=lerp_time(get_minimap).to_tuple(),
-            status_bar=lerp_time(get_status_bar).to_tuple(),
-            status_bar_label=lerp_time(get_status_bar_label).to_tuple(),
-            sidebar_selected=lerp_time(get_sidebar_selected).to_tuple(),
-            sidebar_heading=lerp_time(get_sidebar_heading).to_tuple(),
-            sb_file_text_hover=lerp_time(get_sb_file_text_hover).to_tuple(),
-            sb_file_text_selected=lerp_time(get_sb_file_text_selected).to_tuple(),
-            sb_folder_icon=lerp_time(get_sb_folder_icon).to_tuple(),
-            sb_folder_icon_hover=lerp_time(get_sb_folder_icon_hover).to_tuple(),
-            sb_folder_icon_selected=lerp_time(get_sb_folder_icon_selected).to_tuple(),
-            large_button=lerp_time(get_large_button).to_tuple(),
-            large_button_pressed=lerp_time(get_large_button_pressed).to_tuple(),
-            large_button_text=lerp_time(get_large_button_text).to_tuple(),
-            panel_background=lerp_time(get_panel_background).to_tuple(),
-            quick_panel_background=lerp_time(get_quick_panel_background).to_tuple(),
-            qp_row=lerp_time(get_qp_row).to_tuple(),
-            qp_row_selected=lerp_time(get_qp_row_selected).to_tuple(),
-            qp_text=lerp_time(get_qp_text).to_tuple(),
-            qp_text_match=lerp_time(get_qp_text_match).to_tuple(),
-            qp_text_selected=lerp_time(get_qp_text_selected).to_tuple(),
-            qp_text_match_selected=lerp_time(get_qp_text_match_selected).to_tuple(),
-            qp_text_score=lerp_time(get_qp_text_score).to_tuple(),
-            qp_text_score_selected=lerp_time(get_qp_text_score_selected).to_tuple(),
-            ac_background=lerp_time(get_ac_background).to_tuple(),
-            ac_text=lerp_time(get_ac_text).to_tuple(),
-            ac_text_match=lerp_time(get_ac_text_match).to_tuple(),
-            ac_text_selected=lerp_time(get_ac_text_selected).to_tuple(),
-            ac_text_match_selected=lerp_time(get_ac_text_match_selected).to_tuple(),
-            ac_row_selected=lerp_time(get_ac_row_selected).to_tuple(),
-            icon_button_off=lerp_time(get_icon_button_off).to_tuple(),
-            icon_button_on=lerp_time(get_icon_button_on).to_tuple()
+            sidebar=no_lerp(get_sidebar).to_tuple(),
+            sb_file_text=no_lerp(get_sb_file_text).to_tuple(),
+            sb_folder_text=no_lerp(get_sb_folder_text).to_tuple(),
+            tab_background=no_lerp(get_tab_background).to_tuple(),
+            tab_active=no_lerp(get_tab_active).to_tuple(),
+            tab_inactive=no_lerp(get_tab_inactive).to_tuple(),
+            tab_hover=no_lerp(get_tab_hover).to_tuple(),
+            tab_active_text=no_lerp(get_tab_active_text).to_tuple(),
+            tab_inactive_text=no_lerp(get_tab_inactive_text).to_tuple(),
+            tab_hover_text=no_lerp(get_tab_hover_text).to_tuple(),
+            tab_close=no_lerp(get_tab_close).to_tuple(),
+            tab_close_hover=no_lerp(get_tab_close_hover).to_tuple(),
+            tab_dirty=no_lerp(get_tab_dirty).to_tuple(),
+            fold_closed=no_lerp(get_fold_closed).to_tuple(),
+            fold_closed_pressed=no_lerp(get_fold_closed_pressed).to_tuple(),
+            fold_open=no_lerp(get_fold_open).to_tuple(),
+            fold_open_pressed=no_lerp(get_fold_open_pressed).to_tuple(),
+            scroll_bar_background=no_lerp(get_scroll_bar_background).to_tuple(),
+            scroll_bar_corner=no_lerp(get_scroll_bar_corner).to_tuple(),
+            scroll_puck=no_lerp(get_scroll_puck).to_tuple(),
+            empty_window=no_lerp(get_empty_window).to_tuple(),
+            layout_divider=no_lerp(get_layout_divider).to_tuple(),
+            minimap=no_lerp(get_minimap).to_tuple(),
+            status_bar=no_lerp(get_status_bar).to_tuple(),
+            status_bar_label=no_lerp(get_status_bar_label).to_tuple(),
+            sidebar_selected=no_lerp(get_sidebar_selected).to_tuple(),
+            sidebar_heading=no_lerp(get_sidebar_heading).to_tuple(),
+            sb_file_text_hover=no_lerp(get_sb_file_text_hover).to_tuple(),
+            sb_file_text_selected=no_lerp(get_sb_file_text_selected).to_tuple(),
+            sb_folder_icon=no_lerp(get_sb_folder_icon).to_tuple(),
+            sb_folder_icon_hover=no_lerp(get_sb_folder_icon_hover).to_tuple(),
+            sb_folder_icon_selected=no_lerp(get_sb_folder_icon_selected).to_tuple(),
+            large_button=no_lerp(get_large_button).to_tuple(),
+            large_button_pressed=no_lerp(get_large_button_pressed).to_tuple(),
+            large_button_text=no_lerp(get_large_button_text).to_tuple(),
+            panel_background=no_lerp(get_panel_background).to_tuple(),
+            quick_panel_background=no_lerp(get_quick_panel_background).to_tuple(),
+            qp_row=no_lerp(get_qp_row).to_tuple(),
+            qp_row_selected=no_lerp(get_qp_row_selected).to_tuple(),
+            qp_text=no_lerp(get_qp_text).to_tuple(),
+            qp_text_match=no_lerp(get_qp_text_match).to_tuple(),
+            qp_text_selected=no_lerp(get_qp_text_selected).to_tuple(),
+            qp_text_match_selected=no_lerp(get_qp_text_match_selected).to_tuple(),
+            qp_text_score=no_lerp(get_qp_text_score).to_tuple(),
+            qp_text_score_selected=no_lerp(get_qp_text_score_selected).to_tuple(),
+            ac_background=no_lerp(get_ac_background).to_tuple(),
+            ac_text=no_lerp(get_ac_text).to_tuple(),
+            ac_text_match=no_lerp(get_ac_text_match).to_tuple(),
+            ac_text_selected=no_lerp(get_ac_text_selected).to_tuple(),
+            ac_text_match_selected=no_lerp(get_ac_text_match_selected).to_tuple(),
+            ac_row_selected=no_lerp(get_ac_row_selected).to_tuple(),
+            icon_button_off=no_lerp(get_icon_button_off).to_tuple(),
+            icon_button_on=no_lerp(get_icon_button_on).to_tuple()
         ))
 
-    time.sleep(600)
+    # sleep an hour before checking again
+    time.sleep(3600)

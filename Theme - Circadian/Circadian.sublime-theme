@@ -1,3 +1,4 @@
+
 [
 //
 // TABS
@@ -5,9 +6,10 @@
     // Tab set
     {
         "class": "tabset_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tabset-background.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tabset-background.png",
         "layer0.inner_margin": [10, 0],
-        "layer0.opacity": 1.0,
+        "layer0.opacity":1.0,
+        "layer0.tint": [255, 255, 255],
         "content_margin": [0, 4, 0, 0],
         "tab_overlap": 6,
         "tab_width": 160,
@@ -27,17 +29,20 @@
         "max_margin_trim": 0,
         "hit_test_level": 0.5,
         // Inactive tab settings
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tab-inactive.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tab.png",
         "layer0.inner_margin": [20, 4],
         "layer0.opacity": 1.0,
+        "layer0.tint": [255, 255, 255],
         // Active tab setting
-        "layer1.texture": "Theme - Flatland/Flatland Dark/tab-active.png",
+        "layer1.texture": "Theme - Circadian/Circadian/tab.png",
         "layer1.inner_margin": [20, 4],
         "layer1.opacity": 0.0,
+        "layer1.tint": [216, 242, 255],
         // Hover tab setting
-        "layer2.texture": "Theme - Flatland/Flatland Dark/tab-hover.png",
+        "layer2.texture": "Theme - Circadian/Circadian/tab.png",
         "layer2.inner_margin": [20, 4],
-        "layer2.opacity": 0.0
+        "layer2.opacity": 0.0,
+        "layer2.tint": [229, 242, 255]
     },
     {
         // Tab close state
@@ -63,19 +68,19 @@
     {
         "class": "tab_label",
         "fade": false,
-        "fg": [144, 146, 147],
+        "fg": [63, 63, 63],
         "font.bold" : false,
         "font.size" : 11
     },
     {
         "class": "tab_label",
         "parents": [{"class": "tab_control", "attributes": ["hover"]}],
-        "fg": [255, 255, 255]
+        "fg": [0, 0, 0]
     },
     {
         "class": "tab_label",
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-        "fg": [255, 255, 255],  // active tab text
+        "fg": [0, 0, 0],  // active tab text
         "shadow_color": [75, 59, 83],
         "shadow_offset": [0, 0]
 
@@ -85,12 +90,14 @@
         "class": "tab_close_button",
         "content_margin": [0, 0],
         // Tab close default settings
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tab-close.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tab-close.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 0],
+        "layer0.tint": [153, 153, 153],
         // Tab close hover settings
-        "layer1.texture": "Theme - Flatland/Flatland Dark/tab-close-hover.png",
-        "layer1.opacity": 0.0
+        "layer1.texture": "Theme - Circadian/Circadian/tab-close.png",
+        "layer1.opacity": 0.0,
+        "layer1.tint": [255, 255, 255]
     },
     {
         // Tab button size
@@ -109,8 +116,9 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tab-dirty.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tab-dirty.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [255, 127, 0],
         "layer1.opacity": 0.0
     },
     {
@@ -146,24 +154,6 @@
         "layer0.opacity": 1.0,
         "layer1.opacity": 0.0
     },
-    // SQUARE TABS
-    {
-        "class": "tabset_control",
-        "settings": ["flatland_square_tabs"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/square/tabset-background.png",
-        "content_margin": [0, 0, 0, 0]
-        // "tab_overlap": 5
-    },
-    {
-        "class": "tab_control",
-        "settings": ["flatland_square_tabs"],
-        // Inactive tab settings
-        "layer0.texture": "Theme - Flatland/Flatland Dark/square/tab-inactive.png",
-        // Active tab setting
-        "layer1.texture": "Theme - Flatland/Flatland Dark/square/tab-active.png",
-        // Hover tab setting
-        "layer2.texture": "Theme - Flatland/Flatland Dark/square/tab-hover.png"
-    },
 
 //
 // FOLD BUTTONS
@@ -171,12 +161,14 @@
 
     {
         "class": "fold_button_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/fold-closed.png",
+        "layer0.texture": "Theme - Circadian/Circadian/fold-closed.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/fold-closed-pressed.png",
+        "layer0.tint": [255, 127, 0],
+        "layer1.texture": "Theme - Circadian/Circadian/fold-closed.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
+        "layer1.tint": [255, 191, 63],
         "content_margin": [9, 7, 8, 6]
     },
     {
@@ -194,8 +186,10 @@
     {
         "class": "fold_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/fold-open.png",
-        "layer1.texture": "Theme - Flatland/Flatland Dark/fold-open-pressed.png"
+        "layer0.texture": "Theme - Circadian/Circadian/fold-open.png",
+        "layer0.tint": [127, 127, 127],
+        "layer1.texture": "Theme - Circadian/Circadian/fold-open.png",
+        "layer1.tint": [191, 191, 191]
     },
 
 //
@@ -205,33 +199,37 @@
     // Standard vertical scroll bar
     {
         "class": "scroll_bar_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 6],
+        "layer0.tint": [224, 224, 224],
         "blur": false
     },
     // Standard horizontal scroll bar
     {
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 0],
+        "layer0.tint": [224, 224, 224],
         "blur": false
     },
     // Standard scroll bar corner
     {
         "class": "scroll_corner_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-scrollbar-corner.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-scrollbar.png",
         "layer0.opacity": 1.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.inner_margin": [1, 1],
+        "layer0.tint": [178, 178, 178]
     },
     // Standard vertical scroll puck
     {
         "class": "puck_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-puck-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-puck-vertical.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 10],
+        "layer0.tint": [153, 153, 153],
         "content_margin": [8, 12],
         "blur": false
     },
@@ -239,9 +237,10 @@
     {
         "class": "puck_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/standard-puck-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/standard-puck-horizontal.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [10, 0],
+        "layer0.tint": [153, 153, 153],
         "content_margin": [12, 8],
         "blur": false
     },
@@ -265,7 +264,7 @@
     {
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-scrollbar-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-scrollbar-vertical.png",
         "layer0.inner_margin": [0, 5],
         "blur": true
     },
@@ -274,7 +273,7 @@
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-scrollbar-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-scrollbar-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "blur": true
     },
@@ -282,7 +281,7 @@
     {
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-puck-vertical.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-puck-vertical.png",
         "layer0.inner_margin": [0, 5],
         "content_margin": [5, 20],
         "blur": true
@@ -292,7 +291,7 @@
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-puck-horizontal.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-puck-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "content_margin": [20, 5],
         "blur": true
@@ -302,14 +301,14 @@
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["dark"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-dark-puck-vertical.png"
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-dark-puck-vertical.png"
     },
     // Overlay light horizontal puck (for dark content)
     {
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal", "dark"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-dark-puck-horizontal.png"
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-dark-puck-horizontal.png"
     },
 
 //
@@ -318,7 +317,7 @@
 
     {
         "class": "sheet_container_control",
-        "layer0.tint": [38,41,44],
+        "layer0.tint": [191, 191, 191],
         "layer0.opacity": 1.0
     },
 
@@ -328,7 +327,7 @@
     {
         "class": "grid_layout_control",
         "border_size": 1,
-        "border_color": [70, 70, 70]
+        "border_color": [102, 102, 102]
     },
 
 //
@@ -337,7 +336,7 @@
 
     {
         "class": "minimap_control",
-        "viewport_color": [61, 142, 243, 20]
+        "viewport_color": [255, 255, 0, 25]
     },
 
 //
@@ -347,7 +346,7 @@
     // General labels
     {
         "class": "label_control",
-        "color": [201, 202, 203],
+        "color": [255, 255, 255],
         "shadow_color": [201, 202, 203],
         "shadow_offset": [0, 0],
         "font.bold" : true,
@@ -371,7 +370,7 @@
     {
         "class": "label_control",
         "parents": [{"class": "status_bar"}],
-        "color": [148, 149, 151],
+        "color": [204, 242, 255],
         "shadow_color": [200, 200, 200],
         "shadow_offset": [0, 0],
         "font.bold" : false
@@ -384,7 +383,7 @@
     // Tooltip container
     {
         "class": "tool_tip_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/tooltip.png",
+        "layer0.texture": "Theme - Circadian/Circadian/tooltip.png",
         "layer0.inner_margin": [1, 1],
         "layer0.opacity": 0.95,
         "content_margin": [3, 3]
@@ -401,9 +400,10 @@
     // Status bar container
     {
         "class": "status_bar",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/status-bar-background.png",
+        "layer0.texture": "Theme - Circadian/Circadian/status-bar-background.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 2],
+        "layer0.tint": [102, 102, 102],
         "content_margin": [14, 4, 4, 4]
     },
     {
@@ -418,7 +418,7 @@
     // Sidebar container
     {
         "class": "sidebar_container",
-        "layer0.tint": [49, 52 ,55],
+        "layer0.tint": [255, 255, 255],
         "layer0.opacity": 1.0,
         "layer0.draw_center": false,
         "layer0.inner_margin": [0, 0, 0, 0],
@@ -431,7 +431,7 @@
         "indent": 14,
         "indent_offset": 20,
         "indent_top_level": false,
-        "layer0.tint": [49, 52, 55],
+        "layer0.tint": [255, 255, 255],
         "layer0.opacity": 1.0,
         "dark_content": false
     },
@@ -463,17 +463,10 @@
     // Sidebar rows
     {
         "class": "tree_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/sidebar-row-selected.png",
+        "layer0.texture": "Theme - Circadian/Circadian/sidebar-row-selected.png",
         "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1,1]
-    },
-    // Settings for gray selected sidebar
-    {
-        "settings": ["flatland_gray_selected_sidebar"],
-        "class": "tree_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/sidebar-row-selected-gray.png",
-        "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1,1]
+        "layer0.inner_margin": [1,1],
+        "layer0.tint": [255, 127, 0]
     },
     // Sidebar row selected
     {
@@ -484,29 +477,29 @@
     // Sidebar heading
     {
         "class": "sidebar_heading",
-        "color": [148, 149, 151],
+        "color": [102, 102, 102],
         "font.bold": true,
-        "shadow_color": [148, 149, 151],
+        "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 0]
     },
     // Sidebar entry
     {
         "class": "sidebar_label",
-        "color": [212, 212, 213],
+        "color": [51, 51, 51],
         "shadow_offset": [0, 0]
     },
     // Sidebar folder entry
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
-        "color": [212, 212, 213],
+        "color": [0, 0, 0],
         "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 0]
     },
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
-        "color": [255, 255, 255]
+        "color": [127, 127, 127]
     },
     {
         "class": "sidebar_label",
@@ -525,10 +518,10 @@
     // Sidebar file close
     {
         "class": "close_button",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close.png",
+        "layer0.texture": "Theme - Circadian/Circadian/file-close.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/file-close-selected.png",
+        "layer1.texture": "Theme - Circadian/Circadian/file-close-selected.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
         "content_margin": [8, 8]
@@ -549,62 +542,71 @@
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-dirty.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Circadian/Circadian/file-dirty.png",
+        "layer0.opacity": 1.0,
+        "layer0.tint": [255, 127, 0]
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-dirty-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-dirty-selected.png",
+        "layer0.tint": [255, 255, 255]
+
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-close.png"
     },
     // Sidebar file close hover
     {
         "class": "close_button",
         "attributes": ["hover"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/file-close-hover.png"
+        "layer0.texture": "Theme - Circadian/Circadian/file-close-hover.png"
     },
     // Sidebar group closed
     {
         "class": "disclosure_button_control",
         "content_margin": [0, 6, 18, 7],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed.png",
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
         "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
+        "layer0.inner_margin": 0,
+        "layer0.tint": [107, 107, 107]
     },
     {
         "class": "disclosure_button_control",
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
+        "layer0.tint": [178, 178, 178]
     },
     {
         "class": "disclosure_button_control",
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-closed-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-closed.png",
+        "layer0.tint": [255, 255, 255]
     },
     // Sidebar group open
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": [107, 107, 107]
     },
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": [178, 178, 178]
     },
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/group-open-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/group-open.png",
+        "layer0.tint": [255, 255, 255]
     },
 
 //
@@ -624,25 +626,25 @@
         {
             "keyframes":
             [
-                "Theme - Flatland/Flatland Dark/spinner/spin_1.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_2.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_3.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_4.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_5.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_6.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_7.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_8.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_9.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_10.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_11.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_12.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_13.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_14.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_15.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_16.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_17.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_18.png",
-                "Theme - Flatland/Flatland Dark/spinner/spin_19.png"
+                "Theme - Circadian/Circadian/spinner/spin_1.png",
+                "Theme - Circadian/Circadian/spinner/spin_2.png",
+                "Theme - Circadian/Circadian/spinner/spin_3.png",
+                "Theme - Circadian/Circadian/spinner/spin_4.png",
+                "Theme - Circadian/Circadian/spinner/spin_5.png",
+                "Theme - Circadian/Circadian/spinner/spin_6.png",
+                "Theme - Circadian/Circadian/spinner/spin_7.png",
+                "Theme - Circadian/Circadian/spinner/spin_8.png",
+                "Theme - Circadian/Circadian/spinner/spin_9.png",
+                "Theme - Circadian/Circadian/spinner/spin_10.png",
+                "Theme - Circadian/Circadian/spinner/spin_11.png",
+                "Theme - Circadian/Circadian/spinner/spin_12.png",
+                "Theme - Circadian/Circadian/spinner/spin_13.png",
+                "Theme - Circadian/Circadian/spinner/spin_14.png",
+                "Theme - Circadian/Circadian/spinner/spin_15.png",
+                "Theme - Circadian/Circadian/spinner/spin_16.png",
+                "Theme - Circadian/Circadian/spinner/spin_17.png",
+                "Theme - Circadian/Circadian/spinner/spin_18.png",
+                "Theme - Circadian/Circadian/spinner/spin_19.png"
             ],
             "loop": true,
             "frame_time": 0.05
@@ -662,13 +664,15 @@
         "content_margin": [4, 6, 4, 5],
         "min_size": [69, 0],
         // Default button state
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-large.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-large.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 6],
+        "layer0.tint": [102, 102, 102],
         // Pressed button setup
-        "layer1.texture": "Theme - Flatland/Flatland Dark/btn-large-on.png",
+        "layer1.texture": "Theme - Circadian/Circadian/btn-large.png",
         "layer1.opacity": 0.0,
-        "layer1.inner_margin": [6, 6]
+        "layer1.inner_margin": [6, 6],
+        "layer1.tint": [127, 127, 127]
     },
     {
         // Pressed button state
@@ -684,8 +688,8 @@
     // Text input field item
     {
         "class": "text_line_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/text-field.png",
-        "layer0.opacity": 1.0,
+        "layer0.texture": "Theme - Circadian/Circadian/text-field.png",
+        "layer0.opacity": 0.0,
         "layer0.inner_margin": [10,10,10,10],
         "content_margin": [4, 5, 15, 4]
     },
@@ -697,17 +701,19 @@
     // Bottom panel background
     {
         "class": "panel_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/panel-background.png",
+        "layer0.texture": "Theme - Circadian/Circadian/panel-background.png",
         "layer0.inner_margin": [2, 2, 2, 5],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": [165, 165, 165]
     },
     // Quick panel background
     {
         "class": "overlay_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/overlay-bg.png",
+        "layer0.texture": "Theme - Circadian/Circadian/overlay-bg.png",
         "layer0.inner_margin": [30, 30, 30, 30], // 9grid for the background
         "layer0.opacity": 1.0,
-        "layer1.texture": "Theme - Flatland/Flatland Dark/quick-panel-background.png",
+        "layer0.tint": [76, 76, 76],
+        "layer1.texture": "Theme - Circadian/Circadian/quick-panel-background.png",
         "layer1.inner_margin": [20, 40, 20, 20],
         "layer1.opacity": 1.0,
         "content_margin": [20, 0, 20, 26] // content margin
@@ -731,33 +737,35 @@
     },
     {
         "class": "quick_panel_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row.png",
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": [140, 140, 140]
     },
     {
         "class": "quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
+        "layer0.tint": [255, 127, 0]
     },
     {
         "class": "quick_panel_label",
-        "fg": [144, 146, 147],
-        "match_fg": [36, 150, 233, 255],
-        "selected_fg": [255, 255, 255, 255], //selected foreground
-        "selected_match_fg": [37, 40, 43, 255]
+        "fg": [255, 255, 255],
+        "match_fg": [198, 242, 255],
+        "selected_fg": [0, 0, 0],
+        "selected_match_fg": [198, 242, 255]
     },
     {
         "class": "quick_panel_path_label",
-        "fg": [104, 106, 107, 255],
-        "match_fg": [16, 130, 213, 255],
-        "selected_fg": [215, 215, 215, 255],
-        "selected_match_fg": [57, 60, 63, 255]
+        "fg": [255, 255, 255],
+        "match_fg": [198, 242, 255],
+        "selected_fg": [0, 0, 0],
+        "selected_match_fg": [198, 242, 255]
     },
     {
         "class": "quick_panel_score_label",
-        "fg": [43, 151, 237, 255],
-        "selected_fg": [43, 151, 237, 255]
+        "fg": [255, 255, 0],
+        "selected_fg": [255, 255, 0]
     },
 
 //
@@ -766,14 +774,16 @@
 
     {
         "class": "mini_quick_panel_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row.png",
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1.0,
+        "layer0.tint": [140, 140, 140]
     },
     {
         "class": "mini_quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row-selected.png"
+        "layer0.texture": "Theme - Circadian/Circadian/quick-panel-row.png",
+        "layer0.tint": [255, 127, 0]
     },
 
 //
@@ -786,24 +796,25 @@
     {
         "class": "auto_complete",
         "row_padding": [2, 2],
-        "layer0.tint": [30, 30, 30],
+        "layer0.tint": [114, 114, 114],
         "layer0.opacity": 1.0,
         "dark_content": true
     },
     {
         "class": "auto_complete_label",
-        "fg": [140, 140, 140],
-        "match_fg": [255, 255, 255],
+        "fg": [255, 255, 255],
+        "match_fg": [198, 242, 255],
         "bg": [26, 26, 26],
-        "selected_fg": [255, 255, 255],
-        "selected_match_fg": [255, 255, 255],
+        "selected_fg": [0, 0, 0],
+        "selected_match_fg": [198, 242, 255],
         "selected_bg": [86, 86, 86]
     },
     {
         "class": "table_row",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/code-completion-row-selected.png",
+        "layer0.texture": "Theme - Circadian/Circadian/code-completion-row-selected.png",
         "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.inner_margin": [1, 1],
+        "layer0.tint": [255, 127, 0]
     },
     {
         "class": "table_row",
@@ -818,32 +829,36 @@
     // Button group middle
     {
         "class": "icon_button_control",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-middle.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-middle.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [102, 102, 102],
         "content_margin": [4, 4,4,5]
     },
     // Button group left
     {
         "class": "icon_button_control",
         "attributes": ["left"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-left.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-left.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [102, 102, 102],
         "content_margin": [8,4,5,5]
     },
     // Button group right
     {
         "class": "icon_button_control",
         "attributes": ["right"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-group-right.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-group-right.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [102, 102, 102],
         "content_margin": [4,4,8,5]
     },
     // Button single
     {
         "class": "icon_button_control",
         "attributes": ["left", "right"],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/btn-single.png",
+        "layer0.texture": "Theme - Circadian/Circadian/btn-single.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [102, 102, 102],
         "content_margin": [8,4,8,5]
     },
 
@@ -854,38 +869,44 @@
     // Regex search button
     {
         "class": "icon_regex",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-regex-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-regex.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_regex",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-regex-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-regex.png",
+        "layer0.tint": [229, 229, 0]
     },
     // Case sensitive search button
     {
         "class": "icon_case",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-case-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-case.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_case",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-case-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-case.png",
+        "layer0.tint": [229, 229, 0]
     },
     // Match whole word search button
     {
         "class": "icon_whole_word",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-word-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-word.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_whole_word",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-word-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-word.png",
+        "layer0.tint": [229, 229, 0]
     },
 
 //
@@ -895,26 +916,30 @@
     // Show search context button
     {
         "class": "icon_context",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-context-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-context.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_context",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-context-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-context.png",
+        "layer0.tint": [229, 229, 0]
     },
     // Use search buffer
     {
         "class": "icon_use_buffer",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-buffer-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-buffer.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_use_buffer",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-buffer-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-buffer.png",
+        "layer0.tint": [229, 229, 0]
     },
 
 //
@@ -924,38 +949,44 @@
     // Reverse search direction button
     {
         "class": "icon_reverse",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-reverse-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-reverse.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_reverse",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-reverse-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-reverse.png",
+        "layer0.tint": [229, 229, 0]
     },
     // Search wrap button
     {
         "class": "icon_wrap",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-wrap-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-wrap.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_wrap",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-wrap-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-wrap.png",
+        "layer0.tint": [229, 229, 0]
     },
     // Search in selection button
     {
         "class": "icon_in_selection",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-selection-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-selection.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_in_selection",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-selection-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-selection.png",
+        "layer0.tint": [229, 229, 0]
     },
 
 //
@@ -965,14 +996,16 @@
     // Preserve case button
     {
         "class": "icon_preserve_case",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-preserve-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-preserve.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_preserve_case",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-preserve-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-preserve.png",
+        "layer0.tint": [229, 229, 0]
     },
 
 //
@@ -982,14 +1015,16 @@
     // Highlight results button
     {
         "class": "icon_highlight",
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-highlight-off.png",
+        "layer0.texture": "Theme - Circadian/Circadian/icon-highlight.png",
         "layer0.opacity": 1.0,
+        "layer0.tint": [191, 191, 191],
         "content_margin": [8, 8]
     },
     {
         "class": "icon_highlight",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Flatland/Flatland Dark/icon-highlight-on.png"
+        "layer0.texture": "Theme - Circadian/Circadian/icon-highlight.png",
+        "layer0.tint": [229, 229, 0]
     }
 
 ]
