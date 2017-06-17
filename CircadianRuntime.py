@@ -1360,7 +1360,7 @@ import datetime
 
 def get_theme():
     # t = datetime.datetime.now().hour % 24
-    t = 6
+    t = 2
     while True:
         if t in THEMES:
             return THEMES[t]

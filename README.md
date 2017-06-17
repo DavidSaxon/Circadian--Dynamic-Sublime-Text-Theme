@@ -3,8 +3,23 @@
 
 A colour scheme and UI theme for Sublime Text 2 that changes throughout the day.
 
-#### 6am Dawn
+#### 6am
 ![](http://i.imgur.com/P2KmhQF.png)
+
+#### 9am
+![](http://i.imgur.com/d29C1EB.png)
+
+#### 4pm
+![](http://i.imgur.com/vytbrkb.png)
+
+#### 6pm
+![](http://i.imgur.com/iAO5ziL.png)
+
+#### 9pm
+![](http://i.imgur.com/Q1WrLeb.png)
+
+#### 2am
+![](http://i.imgur.com/kN8mXrA.png)
 
 ### Installing
 
