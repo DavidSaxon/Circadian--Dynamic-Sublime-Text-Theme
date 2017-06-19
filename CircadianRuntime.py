@@ -2479,6 +2479,11 @@ import time
 THEME_DIRECTORY = os.path.expanduser(
     '~/.config/sublime-text-2/Packages/Theme - Circadian'
 )
+if os.name == 'nt':
+    THEME_DIRECTORY = \
+        'C:/Users/David/AppData/Roaming/Sublime Text 2/Packages/' + \
+        'Theme - Circadian'
+
 # the file path where the text theme file lives
 TEXT_THEME_PATH = os.path.join(THEME_DIRECTORY, 'Circadian.tmTheme')
 # the file path where the UI theme file lives
